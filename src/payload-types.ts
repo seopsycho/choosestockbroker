@@ -69,6 +69,9 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    brokers: Broker;
+    countries: Country;
+    faqs: Faq;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -77,6 +80,9 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    brokers: BrokersSelect<false> | BrokersSelect<true>;
+    countries: CountriesSelect<false> | CountriesSelect<true>;
+    faqs: FaqsSelect<false> | FaqsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -158,6 +164,78 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "brokers".
+ */
+export interface Broker {
+  id: string;
+  name: string;
+  logo?: (string | null) | Media;
+  minDeposit: number;
+  commissions: string;
+  regulation: string;
+  platforms?:
+    | {
+        platform: string;
+        id?: string | null;
+      }[]
+    | null;
+  highlights?:
+    | {
+        highlight: string;
+        id?: string | null;
+      }[]
+    | null;
+  paymentMethods?:
+    | {
+        method: string;
+        id?: string | null;
+      }[]
+    | null;
+  rating: number;
+  countries?:
+    | {
+        countryCode: string;
+        id?: string | null;
+      }[]
+    | null;
+  website?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "countries".
+ */
+export interface Country {
+  id: string;
+  name: string;
+  code: string;
+  flag?: string | null;
+  languages?:
+    | {
+        code: string;
+        name: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faqs".
+ */
+export interface Faq {
+  id: string;
+  question: string;
+  answer: string;
+  country?: string | null;
+  language?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -170,6 +248,18 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: string | Media;
+      } | null)
+    | ({
+        relationTo: 'brokers';
+        value: string | Broker;
+      } | null)
+    | ({
+        relationTo: 'countries';
+        value: string | Country;
+      } | null)
+    | ({
+        relationTo: 'faqs';
+        value: string | Faq;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -252,6 +342,75 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "brokers_select".
+ */
+export interface BrokersSelect<T extends boolean = true> {
+  name?: T;
+  logo?: T;
+  minDeposit?: T;
+  commissions?: T;
+  regulation?: T;
+  platforms?:
+    | T
+    | {
+        platform?: T;
+        id?: T;
+      };
+  highlights?:
+    | T
+    | {
+        highlight?: T;
+        id?: T;
+      };
+  paymentMethods?:
+    | T
+    | {
+        method?: T;
+        id?: T;
+      };
+  rating?: T;
+  countries?:
+    | T
+    | {
+        countryCode?: T;
+        id?: T;
+      };
+  website?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "countries_select".
+ */
+export interface CountriesSelect<T extends boolean = true> {
+  name?: T;
+  code?: T;
+  flag?: T;
+  languages?:
+    | T
+    | {
+        code?: T;
+        name?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faqs_select".
+ */
+export interface FaqsSelect<T extends boolean = true> {
+  question?: T;
+  answer?: T;
+  country?: T;
+  language?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

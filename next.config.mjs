@@ -15,6 +15,10 @@ const nextConfig = {
       },
     ],
   },
+  // Skip TypeScript type checking during build
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { getBrokers } from '@/actions/getBrokers'
 import Image from 'next/image'
 import { Media } from '@/payload-types'
@@ -30,15 +30,19 @@ export function BrokerTable() {
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc')
 
   useEffect(() => {
+    let cancelled = false
     const fetchBrokers = async () => {
       try {
         setLoading(true)
         const data = await getBrokers()
-        if (data && Array.isArray(data.docs)) {
-          const mappedBrokers = data.docs.map((broker: import('@/payload-types').Broker) => ({
-            id: broker.id,
-            name: broker.name,
-            logo: typeof broker.logo === 'object' && broker.logo !== null ? broker.logo : undefined,
+        if (!cancelled && data && Array.isArray(data.docs)) {
+          const mappedBrokers = data.docs.map((broker: Partial<import('@/payload-types').Broker>) => ({
+            id: broker.id as string,
+            name: broker.name as string,
+            logo:
+              broker.logo && typeof broker.logo === 'object'
+                ? (broker.logo as unknown as Media)
+                : undefined,
             rating: typeof broker.rating === 'number' ? broker.rating : 0,
             minDeposit: typeof broker.minDeposit === 'number' ? broker.minDeposit : 0,
             assets: 0, // Default, since not present in Payload type
@@ -55,34 +59,39 @@ export function BrokerTable() {
             address: '', // Default, since not present in Payload type
           }))
           setBrokers(mappedBrokers)
-        } else {
+        } else if (!cancelled) {
           setError('Failed to load brokers')
         }
       } catch (err) {
-        console.error('Error fetching brokers:', err)
-        setError('Failed to load brokers')
-        // Fallback to mock data for now
-        setBrokers([
-          {
-            id: '1',
-            name: 'eToro',
-            rating: 4.5,
-            minDeposit: 50,
-            assets: 5000,
-            highlights: [
-              { highlight: 'Regulated By FCA, ASIC & CySEC' },
-              { highlight: 'Free Practice Account' },
-            ],
-            paymentMethods: [{ method: 'Wire Transfer' }, { method: 'Visa' }],
-            visitUrl: 'https://etoro.com',
-            riskWarning: 'Your capital is at risk. Other fees apply.',
-          },
-        ])
+        if (!cancelled) {
+          console.error('Error fetching brokers:', err)
+          setError('Failed to load brokers')
+          // Fallback to mock data for now
+          setBrokers([
+            {
+              id: '1',
+              name: 'eToro',
+              rating: 4.5,
+              minDeposit: 50,
+              assets: 5000,
+              highlights: [
+                { highlight: 'Regulated By FCA, ASIC & CySEC' },
+                { highlight: 'Free Practice Account' },
+              ],
+              paymentMethods: [{ method: 'Wire Transfer' }, { method: 'Visa' }],
+              visitUrl: 'https://etoro.com',
+              riskWarning: 'Your capital is at risk. Other fees apply.',
+            },
+          ])
+        }
       } finally {
-        setLoading(false)
+        if (!cancelled) setLoading(false)
       }
     }
     fetchBrokers()
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   const handleSort = (field: SortField) => {
@@ -99,18 +108,15 @@ export function BrokerTable() {
     setSortDirection('asc')
   }
 
-  const sortedBrokers = [...brokers].sort((a, b) => {
-    if (!sortField) return 0
-
-    const aValue = sortField === 'deposit' ? a.minDeposit : a.assets
-    const bValue = sortField === 'deposit' ? b.minDeposit : b.assets
-
-    if (sortDirection === 'asc') {
-      return aValue - bValue
-    } else {
-      return bValue - aValue
-    }
-  })
+  const sortedBrokers = useMemo(() => {
+    const list = [...brokers]
+    if (!sortField) return list
+    return list.sort((a, b) => {
+      const aValue = sortField === 'deposit' ? a.minDeposit : a.assets
+      const bValue = sortField === 'deposit' ? b.minDeposit : b.assets
+      return sortDirection === 'asc' ? aValue - bValue : bValue - aValue
+    })
+  }, [brokers, sortField, sortDirection])
 
   const SortIcon = ({ field }: { field: SortField }) => (
     <span className="ml-1 text-xs text-slate-400">

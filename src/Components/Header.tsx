@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { CountrySelector } from './CountrySelector'
 import Link from 'next/link'
 
-export function Header() {
+export function Header({ locale, country }: { locale: string; country: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
@@ -18,13 +18,19 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-slate-700 hover:text-blue-600 transition-colors">
+            <Link
+              href={`/${locale}/${country}`}
+              className="text-slate-700 hover:text-blue-600 transition-colors"
+            >
               Home
             </Link>
-            <Link href="/brokers" className="text-slate-700 hover:text-blue-600 transition-colors">
+            <Link
+              href={`/${locale}/${country}/brokers`}
+              className="text-slate-700 hover:text-blue-600 transition-colors"
+            >
               Online Brokers
             </Link>
-            <CountrySelector />
+            <CountrySelector locale={locale} country={country} />
           </div>
 
           {/* Mobile Menu Button */}
@@ -58,17 +64,20 @@ export function Header() {
         {isMenuOpen && (
           <div className="md:hidden mt-4 py-4 border-t">
             <div className="flex flex-col space-y-4">
-              <Link href="/" className="text-slate-700 hover:text-blue-600 transition-colors">
+              <Link
+                href={`/${locale}/${country}`}
+                className="text-slate-700 hover:text-blue-600 transition-colors"
+              >
                 Home
               </Link>
               <Link
-                href="/brokers"
+                href={`/${locale}/${country}/brokers`}
                 className="text-slate-700 hover:text-blue-600 transition-colors"
               >
                 Online Brokers
               </Link>
               <div className="pt-2">
-                <CountrySelector />
+                <CountrySelector locale={locale} country={country} />
               </div>
             </div>
           </div>

@@ -16,7 +16,7 @@ export default function LocalizedPage({ params }: PageProps) {
 
   return (
     <>
-      <Header />
+      <Header locale={locale} country={country} />
       <main>
         <Hero />
         <BrokerTable />

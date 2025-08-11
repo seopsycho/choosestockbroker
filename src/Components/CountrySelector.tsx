@@ -44,14 +44,28 @@ const fallbackCountries = [
   },
 ]
 
-export function CountrySelector() {
+export function CountrySelector({
+  locale: initialLocale,
+  country: initialCountryCode,
+}: {
+  locale?: string
+  country?: string
+}) {
+  // Derive initial selections from props and fallback
+  const initialCountryObj =
+    (initialCountryCode && fallbackCountries.find((c) => c.code === initialCountryCode)) ||
+    fallbackCountries[0]
+  const initialLanguageObj =
+    (initialLocale && initialCountryObj.languages.find((l) => l.code === initialLocale)) ||
+    initialCountryObj.languages[0]
+
   const [countries, setCountries] = useState<Country[]>(fallbackCountries)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const [_loading, setLoading] = useState(true)
+  const [_error, setError] = useState<string | null>(null)
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedCountry, setSelectedCountry] = useState<Country>(fallbackCountries[0])
+  const [selectedCountry, setSelectedCountry] = useState<Country>(initialCountryObj)
   const [selectedLanguage, setSelectedLanguage] = useState<{ language: string; code: string }>(
-    fallbackCountries[0].languages[0],
+    initialLanguageObj,
   )
   const router = useRouter()
 
@@ -75,10 +89,16 @@ export function CountrySelector() {
               : [{ language: 'English', code: 'en' }],
           }))
           setCountries(mappedCountries)
-          setSelectedCountry(mappedCountries[0])
-          setSelectedLanguage(
-            mappedCountries[0].languages[0] || { language: 'English', code: 'en' },
-          )
+          // Choose defaults based on props if provided
+          const defaultCountry =
+            (initialCountryCode && mappedCountries.find((c) => c.code === initialCountryCode)) ||
+            mappedCountries[0]
+          const defaultLanguage = (initialLocale &&
+            defaultCountry.languages.find((l) => l.code === initialLocale)) ||
+            defaultCountry.languages[0] || { language: 'English', code: 'en' }
+
+          setSelectedCountry(defaultCountry)
+          setSelectedLanguage(defaultLanguage)
         } else {
           setError('Failed to load countries')
         }
@@ -91,7 +111,7 @@ export function CountrySelector() {
       }
     }
     fetchCountries()
-  }, [])
+  }, [initialCountryCode, initialLocale])
 
   const handleSelection = (country: Country, language: { language: string; code: string }) => {
     setSelectedCountry(country)

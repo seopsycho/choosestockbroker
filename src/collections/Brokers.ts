@@ -1,3 +1,4 @@
+import { revalidateTag } from 'next/cache'
 import type { CollectionConfig } from 'payload'
 export const Brokers: CollectionConfig = {
   slug: 'brokers',
@@ -87,4 +88,13 @@ export const Brokers: CollectionConfig = {
       required: false,
     },
   ],
+  hooks: {
+    afterChange: [
+      ({ operation }) => {
+        if (operation === 'create') {
+          revalidateTag('brokers')
+        }
+      },
+    ],
+  },
 }

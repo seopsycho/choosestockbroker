@@ -1,0 +1,1121 @@
+// Internationalization helpers and data for navigation labels
+// Uses standard language codes (ISO 639-1) and provides a safe English fallback
+
+export const TRANSLATIONS = {
+  en: {
+    site: {
+      title: 'ChooseStockBroker - Compare top online trading brokers in 2025',
+      description:
+        'Compare the best stock brokers worldwide. Find regulated brokers with low fees, great platforms, and excellent service.',
+      tagline: 'Compare online trading brokers in 2025',
+      metaDescription:
+        'ChooseStockBroker compares regulated online trading brokers globally, highlighting low fees, powerful platforms, and superior service so you can trade financial assets confidently in 2025.',
+    },
+    navigation: {
+      home: 'Home',
+      brokers: 'Online Brokers',
+      about: 'About',
+      contact: 'Contact',
+    },
+    hero: {
+      title: 'Compare Online Trading Brokers in 2025',
+      subtitle:
+        'Below you can find the top regulated trading brokers to trade financial assets. No commissions, quick withdrawals. Get free access to thousands of trading assets with the top online trading platforms/apps.',
+      selectCountry: 'Select your country',
+      viewTopBrokers: 'View Top Brokers',
+      learnMore: 'Learn More',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: 'Broker',
+        deposit: 'Deposit',
+        assets: 'Assets',
+        highlights: 'Highlights',
+        paymentMethods: 'Payment Methods',
+        learnMore: 'Learn More',
+      },
+      visitSite: 'Visit Site',
+      minDeposit: 'Minimum Deposit',
+      totalAssets: 'Total Assets',
+    },
+    faq: {
+      title: 'Frequently Asked Questions',
+      questions: {
+        whatIsOnlineTrading: 'What is online trading?',
+        whyBuyStocks: 'Why do people buy stocks?',
+        howChooseStock: 'How to choose a stock?',
+        howChooseBroker: 'How to choose a broker?',
+        regulatedBroker: 'Is it better to trade with a regulated broker?',
+        minimumAmount: 'What is the minimum amount to start?',
+      },
+      loading: 'Loading FAQs...',
+      error: 'Error loading FAQs. Please try again later.',
+      helpText: "Still have questions? We're here to help.",
+      contactSupport: 'Contact Support',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com is an independent comparison platform and information service aiming to provide the tools you need to make better decisions. While we are independent, the offers that appear on this site are from companies from which ChooseStockBroker.com receives compensation.',
+      riskWarning:
+        'Trading and investing in stocks, leveraged OTC derivatives, and other transferable securities may put your capital at risk and is considered high-risk, depending on many variables including economic risks, inflation, and market value changes. Leveraged OTC derivatives are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74-89% of retail investor accounts lose money when trading leveraged OTC derivatives. You should consider whether you can afford to take the high risk of losing your money.',
+      contactInfo: 'Contact Info',
+      allRightsReserved: 'ALL RIGHTS RESERVED.',
+      termsConditions: 'Terms & Conditions',
+      privacyPolicy: 'Privacy Policy',
+      cookiePolicy: 'Cookie Policy',
+    },
+    countries: {
+      selectCountry: 'Select Country',
+      vietnam: 'Vietnam (Vietnam)',
+      unitedKingdom: 'United Kingdom (United Kingdom)',
+      unitedStates: 'United States (United States)',
+      germany: 'Germany (Germany)',
+      france: 'France (France)',
+      spain: 'Spain (Spain)',
+      italy: 'Italy (Italy)',
+      portugal: 'Portugal (Portugal)',
+      russia: 'Russia (Russia)',
+      japan: 'Japan (Japan)',
+      korea: 'South Korea (South Korea)',
+      china: 'China (China)',
+    },
+  },
+  vi: {
+    site: {
+      title: 'ChooseStockBroker - So sánh các nhà môi giới giao dịch trực tuyến hàng đầu năm 2025',
+      description:
+        'So sánh các nhà môi giới chứng khoán tốt nhất trên toàn thế giới. Tìm các nhà môi giới được điều chỉnh với phí thấp, nền tảng tuyệt vời và dịch vụ xuất sắc.',
+      tagline: 'So sánh các nhà môi giới giao dịch trực tuyến vào năm 2025',
+      metaDescription:
+        'ChooseStockBroker so sánh các nhà môi giới giao dịch trực tuyến được quy định trên toàn cầu, nhấn mạnh phí thấp, nền tảng mạnh mẽ và dịch vụ vượt trội để bạn có thể giao dịch tài sản tài chính một cách tự tin vào năm 2025.',
+    },
+    navigation: {
+      home: 'Trang Chủ',
+      brokers: 'Nhà Môi Giới Trực Tuyến',
+      about: 'Giới Thiệu',
+      contact: 'Liên Hệ',
+    },
+    hero: {
+      title: 'So sánh các nhà môi giới giao dịch trực tuyến vào năm 2025',
+      subtitle:
+        'Dưới đây bạn có thể tìm các nhà môi giới giao dịch được quy định hàng đầu để giao dịch các tài sản tài chính. Không hoa hồng, rút tiền nhanh. Truy cập miễn phí hàng nghìn tài sản giao dịch với các nền tảng/ứng dụng giao dịch trực tuyến hàng đầu.',
+      selectCountry: 'Chọn quốc gia của bạn',
+      viewTopBrokers: 'Xem Nhà Môi Giới Hàng Đầu',
+      learnMore: 'Tìm hiểu thêm',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: 'Nhà môi giới',
+        deposit: 'Gửi tiền',
+        assets: 'Tài sản',
+        highlights: 'Điểm nổi bật',
+        paymentMethods: 'Phương thức thanh toán',
+        learnMore: 'Tìm hiểu thêm',
+      },
+      visitSite: 'Truy cập trang',
+      minDeposit: 'Tiền gửi tối thiểu',
+      totalAssets: 'Tổng tài sản',
+    },
+    faq: {
+      title: 'Câu Hỏi Thường Gặp',
+      questions: {
+        whatIsOnlineTrading: 'Giao dịch trực tuyến là gì?',
+        whyBuyStocks: 'Tại sao mọi người mua cổ phiếu?',
+        howChooseStock: 'Làm thế nào để chọn một cổ phiếu?',
+        howChooseBroker: 'Làm thế nào để chọn một nhà môi giới?',
+        regulatedBroker: 'Có tốt hơn không khi giao dịch với nhà môi giới được quản lý?',
+        minimumAmount: 'Số tiền tối thiểu để bắt đầu là bao nhiêu?',
+      },
+      loading: 'Đang tải Câu hỏi thường gặp...',
+      error: 'Lỗi tải Câu hỏi thường gặp. Vui lòng thử lại sau.',
+      helpText: 'Vẫn còn thắc mắc? Chúng tôi luôn sẵn sàng hỗ trợ.',
+      contactSupport: 'Liên hệ Hỗ trợ',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com là nền tảng so sánh và dịch vụ thông tin độc lập nhằm cung cấp cho bạn các công cụ cần thiết để đưa ra quyết định tốt hơn. Mặc dù chúng tôi độc lập, các ưu đãi xuất hiện trên trang này đến từ các công ty mà ChooseStockBroker.com nhận được thù lao.',
+      riskWarning:
+        'Giao dịch và đầu tư vào cổ phiếu, các sản phẩm phái sinh OTC có đòn bẩy và các chứng khoán có thể chuyển nhượng khác có thể khiến vốn của bạn gặp rủi ro và được xem là hoạt động có rủi ro cao, phụ thuộc vào nhiều yếu tố biến đổi bao gồm rủi ro kinh tế, lạm phát, thay đổi giá thị trường. Các sản phẩm phái sinh OTC có đòn bẩy là những công cụ phức tạp và đi kèm với rủi ro cao mất tiền nhanh chóng do đòn bẩy. Giữa 74-89% tài khoản nhà đầu tư nhỏ lẻ bị mất tiền khi giao dịch các sản phẩm phái sinh OTC có đòn bẩy. Bạn nên cân nhắc liệu bạn có đủ khả năng chịu được rủi ro cao mất tiền hay không.',
+      contactInfo: 'Thông tin liên hệ',
+      allRightsReserved: 'MỌI QUYỀN ĐƯỢC BẢO LƯU.',
+      termsConditions: 'Điều khoản & Điều kiện',
+      privacyPolicy: 'Chính sách quyền riêng tư',
+      cookiePolicy: 'Chính sách Cookie',
+    },
+    countries: {
+      selectCountry: 'Chọn Quốc Gia',
+      vietnam: 'Việt Nam (Vietnam)',
+      unitedKingdom: 'Vương quốc Anh (United Kingdom)',
+      unitedStates: 'Hoa Kỳ (United States)',
+      germany: 'Đức (Germany)',
+      france: 'Pháp (France)',
+      spain: 'Tây Ban Nha (Spain)',
+      italy: 'Ý (Italy)',
+      portugal: 'Bồ Đào Nha (Portugal)',
+      russia: 'Nga (Russia)',
+      japan: 'Nhật Bản (Japan)',
+      korea: 'Hàn Quốc (South Korea)',
+      china: 'Trung Quốc (China)',
+    },
+  },
+  th: {
+    site: {
+      title: 'ChooseStockBroker - เปรียบเทียบนายหน้าซื้อขายออนไลน์ชั้นนำในปี 2025',
+      description:
+        'เปรียบเทียบนายหน้าซื้อขายหุ้นที่ดีที่สุดทั่วโลก ค้นหานายหน้าที่ได้รับการควบคุมที่มีค่าธรรมเนียมต่ำ แพลตฟอร์มยอดเยี่ยม และบริการที่เป็นเลิศ.',
+      tagline: 'เปรียบเทียบนายหน้าซื้อขายออนไลน์ในปี 2025',
+      metaDescription:
+        'ChooseStockBroker เปรียบเทียบนายหน้าซื้อขายออนไลน์ที่ได้รับการควบคุมทั่วโลก โดยเน้นค่าธรรมเนียมต่ำ แพลตฟอร์มทรงพลัง และบริการที่เหนือกว่า เพื่อให้คุณสามารถซื้อขายสินทรัพย์ทางการเงินได้อย่างมั่นใจในปี 2025.',
+    },
+    navigation: {
+      home: 'หน้าแรก',
+      brokers: 'นายหน้าออนไลน์',
+      about: 'เกี่ยวกับ',
+      contact: 'ติดต่อ',
+    },
+    hero: {
+      title: 'เปรียบเทียบนายหน้าซื้อขายออนไลน์ในปี 2025',
+      subtitle:
+        'ด้านล่างคุณจะพบกับนายหน้าซื้อขายที่ได้รับการควบคุมชั้นนำเพื่อซื้อขายสินทรัพย์ทางการเงิน ไม่มีค่าคอมมิชชั่น ถอนเงินได้รวดเร็ว รับสิทธิ์เข้าถึงสินทรัพย์การซื้อขายหลายพันรายการฟรีด้วยแพลตฟอร์ม/แอปการซื้อขายออนไลน์ชั้นนำ.',
+      selectCountry: 'เลือกประเทศของคุณ',
+      viewTopBrokers: 'ดูนายหน้าชั้นนำ',
+      learnMore: 'เรียนรู้เพิ่มเติม',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: 'นายหน้า',
+        deposit: 'เงินฝาก',
+        assets: 'สินทรัพย์',
+        highlights: 'จุดเด่น',
+        paymentMethods: 'วิธีการชำระเงิน',
+        learnMore: 'เรียนรู้เพิ่มเติม',
+      },
+      visitSite: 'เยี่ยมชมเว็บไซต์',
+      minDeposit: 'เงินฝากขั้นต่ำ',
+      totalAssets: 'สินทรัพย์ทั้งหมด',
+    },
+    faq: {
+      title: 'คำถามที่พบบ่อย',
+      questions: {
+        whatIsOnlineTrading: 'การซื้อขายออนไลน์คืออะไร?',
+        whyBuyStocks: 'ทำไมผู้คนซื้อหุ้น?',
+        howChooseStock: 'จะเลือกหุ้นอย่างไร?',
+        howChooseBroker: 'จะเลือกนายหน้าอย่างไร?',
+        regulatedBroker: 'การลงทุนกับนายหน้าที่ได้รับการควบคุมดีกว่าหรือไม่?',
+        minimumAmount: 'จำนวนเงินขั้นต่ำในการเริ่มต้นคือเท่าไหร่?',
+      },
+      loading: 'กำลังโหลดคำถามที่พบบ่อย...',
+      error: 'เกิดข้อผิดพลาดในการโหลดคำถามที่พบบ่อย โปรดลองอีกครั้งในภายหลัง',
+      helpText: 'ยังมีคำถามอยู่ไหม? เราพร้อมช่วยเหลือคุณ',
+      contactSupport: 'ติดต่อฝ่ายสนับสนุน',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com เป็นแพลตฟอร์มเปรียบเทียบและบริการข้อมูลอิสระที่มุ่งให้เครื่องมือที่คุณต้องการในการตัดสินใจที่ดีขึ้น แม้ว่าเราจะเป็นอิสระ ข้อเสนอที่ปรากฏในเว็บไซต์นี้มาจากบริษัทที่ ChooseStockBroker.com ได้รับค่าตอบแทน.',
+      riskWarning:
+        'การซื้อขายและลงทุนในหุ้น อนุพันธ์ OTC ที่มีเลเวอเรจ และหลักทรัพย์อื่นๆ อาจทำให้เงินทุนของคุณตกอยู่ในความเสี่ยงและถือเป็นธุรกิจที่มีความเสี่ยงสูงและขึ้นอยู่กับหลายปัจจัย เช่น ความเสี่ยงทางเศรษฐกิจ เงินเฟ้อ การเปลี่ยนแปลงมูลค่าตลาด อนุพันธ์ OTC ที่มีเลเวอเรจเป็นเครื่องมือที่ซับซ้อนและมีความเสี่ยงสูงที่จะสูญเสียเงินอย่างรวดเร็วเนื่องจากเลเวอเรจ ระหว่าง 74-89% ของบัญชีนักลงทุนรายย่อยสูญเสียเงินเมื่อซื้อขายอนุพันธ์ OTC ที่มีเลเวอเรจ คุณควรพิจารณาว่าคุณสามารถรับความเสี่ยงสูงในการสูญเสียเงินได้หรือไม่.',
+      contactInfo: 'ข้อมูลติดต่อ',
+      allRightsReserved: 'สงวนลิขสิทธิ์ทั้งหมด.',
+      termsConditions: 'ข้อกำหนดและเงื่อนไข',
+      privacyPolicy: 'นโยบายความเป็นส่วนตัว',
+      cookiePolicy: 'นโยบายคุกกี้',
+    },
+    countries: {
+      selectCountry: 'เลือกประเทศ',
+      vietnam: 'เวียดนาม (Vietnam)',
+      unitedKingdom: 'สหราชอาณาจักร (United Kingdom)',
+      unitedStates: 'สหรัฐอเมริกา (United States)',
+      germany: 'เยอรมนี (Germany)',
+      france: 'ฝรั่งเศส (France)',
+      spain: 'สเปน (Spain)',
+      italy: 'อิตาลี (Italy)',
+      portugal: 'โปรตุเกส (Portugal)',
+      russia: 'รัสเซีย (Russia)',
+      japan: 'ญี่ปุ่น (Japan)',
+      korea: 'เกาหลีใต้ (South Korea)',
+      china: 'จีน (China)',
+    },
+  },
+  ar: {
+    site: {
+      title: 'ChooseStockBroker - قارن وسطاء التداول عبر الإنترنت الرائدين في عام 2025',
+      description:
+        'قارن بين أفضل وسطاء الأسهم في جميع أنحاء العالم. اعثر على وسطاء منظمين برسوم منخفضة ومنصات رائعة وخدمة ممتازة.',
+      tagline: 'قارن وسطاء التداول عبر الإنترنت في عام 2025',
+      metaDescription:
+        'ChooseStockBroker يقارن وسطاء التداول عبر الإنترنت المنظمين حول العالم، مع التركيز على الرسوم المنخفضة والمنصات القوية والخدمة المتفوقة لتمكنك من تداول الأصول المالية بثقة في عام 2025.',
+    },
+    navigation: {
+      home: 'الرئيسية',
+      brokers: 'وسطاء عبر الإنترنت',
+      about: 'حول',
+      contact: 'اتصل',
+    },
+    hero: {
+      title: 'قارن وسطاء التداول عبر الإنترنت في عام 2025',
+      subtitle:
+        'فيما يلي يمكنك العثور على أفضل الوسطاء المنظمين للتداول بالأصول المالية. بدون عمولات، سحب سريع. احصل على وصول مجاني إلى آلاف الأصول المالية عبر أفضل منصات/تطبيقات التداول عبر الإنترنت.',
+      selectCountry: 'اختر بلدك',
+      viewTopBrokers: 'عرض أفضل الوسطاء',
+      learnMore: 'اعرف المزيد',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: 'الوسيط',
+        deposit: 'الإيداع',
+        assets: 'الأصول',
+        highlights: 'أبرز النقاط',
+        paymentMethods: 'طرق الدفع',
+        learnMore: 'تعرف على المزيد',
+      },
+      visitSite: 'زيارة الموقع',
+      minDeposit: 'الحد الأدنى للإيداع',
+      totalAssets: 'إجمالي الأصول',
+    },
+    faq: {
+      title: 'الأسئلة الشائعة',
+      questions: {
+        whatIsOnlineTrading: 'ما هو التداول عبر الإنترنت؟',
+        whyBuyStocks: 'لماذا يشتري الناس الأسهم؟',
+        howChooseStock: 'كيف تختار سهمًا؟',
+        howChooseBroker: 'كيف تختار وسيطًا؟',
+        regulatedBroker: 'هل من الأفضل التعامل مع وسيط منظم؟',
+        minimumAmount: 'ما هو الحد الأدنى للبدء؟',
+      },
+      loading: 'جارٍ تحميل الأسئلة الشائعة...',
+      error: 'حدث خطأ أثناء تحميل الأسئلة الشائعة. يرجى المحاولة مرة أخرى لاحقًا.',
+      helpText: 'ما زالت لديك أسئلة؟ نحن هنا للمساعدة.',
+      contactSupport: 'تواصل مع الدعم',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com هو منصة مقارنة مستقلة وخدمة معلومات تهدف إلى تزويدك بالأدوات التي تحتاجها لاتخاذ قرارات أفضل. على الرغم من أننا مستقلون، فإن العروض التي تظهر في هذا الموقع تأتي من شركات يتلقى منها ChooseStockBroker.com تعويضًا.',
+      riskWarning:
+        'قد يعرض التداول والاستثمار في الأسهم والمشتقات خارج البورصة برافعة مالية وغيرها من الأوراق المالية القابلة للتداول رأس مالك للخطر ويُعتبر نشاطًا ذا مخاطر عالية ويعتمد على العديد من العوامل المتغيرة بما في ذلك المخاطر الاقتصادية والتضخم وتغير قيمة السوق. المشتقات خارج البورصة برافعة مالية هي أدوات معقدة وتأتي مع مخاطر عالية لفقدان المال بسرعة بسبب الرافعة. ما بين 74% و89% من حسابات المستثمرين الأفراد تخسر المال عند تداول المشتقات خارج البورصة برافعة مالية. يجب أن تفكر فيما إذا كنت تستطيع تحمل المخاطرة العالية لفقدان أموالك.',
+      contactInfo: 'معلومات الاتصال',
+      allRightsReserved: 'جميع الحقوق محفوظة.',
+      termsConditions: 'الشروط والأحكام',
+      privacyPolicy: 'سياسة الخصوصية',
+      cookiePolicy: 'سياسة ملفات تعريف الارتباط',
+    },
+    countries: {
+      selectCountry: 'اختر البلد',
+      vietnam: 'فيتنام (Vietnam)',
+      unitedKingdom: 'المملكة المتحدة (United Kingdom)',
+      unitedStates: 'الولايات المتحدة (United States)',
+      germany: 'ألمانيا (Germany)',
+      france: 'فرنسا (France)',
+      spain: 'إسبانيا (Spain)',
+      italy: 'إيطاليا (Italy)',
+      portugal: 'البرتغال (Portugal)',
+      russia: 'روسيا (Russia)',
+      japan: 'اليابان (Japan)',
+      korea: 'كوريا الجنوبية (South Korea)',
+      china: 'الصين (China)',
+    },
+  },
+  ja: {
+    site: {
+      title: 'ChooseStockBroker - 2025年のトップオンライン取引ブローカーを比較',
+      description:
+        '世界中の最高の証券ブローカーを比較し、低い手数料で優れたプラットフォームと卓越したサービスを提供する規制されたブローカーを見つけましょう。',
+      tagline: '2025年のオンライン取引ブローカーを比較する',
+      metaDescription:
+        'ChooseStockBrokerは、世界中の規制されたオンライン取引ブローカーを比較し、低い手数料、強力なプラットフォーム、優れたサービスを強調して、あなたが2025年に金融資産を自信を持って取引できるようサポートします。',
+    },
+    navigation: {
+      home: 'ホーム',
+      brokers: 'オンラインブローカー',
+      about: '概要',
+      contact: 'お問い合わせ',
+    },
+    hero: {
+      title: '2025年のオンライン取引ブローカーを比較する',
+      subtitle:
+        '下記では、金融資産を取引するためのトップクラスの規制ブローカーを見つけることができます。手数料ゼロ、迅速な出金。トップのオンライン取引プラットフォーム/アプリで数千の取引資産に無料でアクセスできます.',
+      selectCountry: '国を選択してください',
+      viewTopBrokers: 'トップブローカーを見る',
+      learnMore: '詳しく見る',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: 'ブローカー',
+        deposit: '入金',
+        assets: '資産',
+        highlights: 'ハイライト',
+        paymentMethods: '支払い方法',
+        learnMore: '詳しく見る',
+      },
+      visitSite: 'サイトを訪問',
+      minDeposit: '最低入金額',
+      totalAssets: '総資産',
+    },
+    faq: {
+      title: 'よくある質問',
+      questions: {
+        whatIsOnlineTrading: 'オンライン取引とは何ですか？',
+        whyBuyStocks: 'なぜ人々は株を買うのですか？',
+        howChooseStock: '株を選ぶにはどうすればいいですか？',
+        howChooseBroker: 'ブローカーを選ぶにはどうすればいいですか？',
+        regulatedBroker: '規制されたブローカーを利用する方が良いですか？',
+        minimumAmount: '開始するための最低金額はいくらですか？',
+      },
+      loading: 'よくある質問を読み込み中...',
+      error: 'よくある質問の読み込み中にエラーが発生しました。後でもう一度お試しください。',
+      helpText: 'まだご不明な点がありますか？私たちがお手伝いします。',
+      contactSupport: 'サポートに連絡',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.comは独立した比較プラットフォームおよび情報サービスであり、より良い判断を下すために必要なツールを提供することを目的としています。私たちは独立していますが、このサイトに表示されているオファーはChooseStockBroker.comが報酬を受け取っている企業からのものです。',
+      riskWarning:
+        '株式への取引および投資、レバレッジをかけたOTCデリバティブおよびその他の譲渡可能証券は、資本を危険にさらす可能性があり、高リスクのビジネスと見なされ、多くの変動要因（経済リスク、インフレ、市場価値の変動など）に依存します。レバレッジ付きOTCデリバティブは複雑な金融商品であり、レバレッジにより迅速に資金を失う高リスクを伴います。レバレッジ付きOTCデリバティブを取引する際、小口投資家の74-89%の口座は損失を被っています。資金を失う高リスクを負う余裕があるかどうかを検討する必要があります。',
+      contactInfo: '連絡先情報',
+      allRightsReserved: '全著作権所有。',
+      termsConditions: '利用規約',
+      privacyPolicy: 'プライバシーポリシー',
+      cookiePolicy: 'クッキーポリシー',
+    },
+    countries: {
+      selectCountry: '国を選択',
+      vietnam: 'ベトナム (Vietnam)',
+      unitedKingdom: 'イギリス (United Kingdom)',
+      unitedStates: 'アメリカ合衆国 (United States)',
+      germany: 'ドイツ (Germany)',
+      france: 'フランス (France)',
+      spain: 'スペイン (Spain)',
+      italy: 'イタリア (Italy)',
+      portugal: 'ポルトガル (Portugal)',
+      russia: 'ロシア (Russia)',
+      japan: '日本 (Japan)',
+      korea: '韓国 (South Korea)',
+      china: '中国 (China)',
+    },
+  },
+  ko: {
+    site: {
+      title: 'ChooseStockBroker - 2025년 최고의 온라인 거래 브로커 비교',
+      description:
+        '전 세계 최고의 주식 브로커를 비교하세요. 낮은 수수료, 훌륭한 플랫폼, 뛰어난 서비스를 제공하는 규제된 브로커를 찾으세요.',
+      tagline: '2025년 온라인 거래 브로커 비교',
+      metaDescription:
+        'ChooseStockBroker는 전 세계적으로 규제된 온라인 거래 브로커를 비교하여 낮은 수수료, 강력한 플랫폼, 뛰어난 서비스를 강조하여 2025년에 금융 자산을 자신 있게 거래할 수 있도록 돕습니다.',
+    },
+    navigation: {
+      home: '홈',
+      brokers: '온라인 브로커',
+      about: '소개',
+      contact: '문의',
+    },
+    hero: {
+      title: '2025년 온라인 거래 브로커 비교',
+      subtitle:
+        '아래에서 금융 자산을 거래할 수 있는 최고 수준의 규제된 브로커를 찾을 수 있습니다. 수수료 없이 빠른 출금. 최고의 온라인 거래 플랫폼/앱을 통해 수천 개의 거래 자산에 무료로 접근하세요.',
+      selectCountry: '국가를 선택하세요',
+      viewTopBrokers: '최고의 브로커 보기',
+      learnMore: '자세히 알아보기',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: '브로커',
+        deposit: '입금',
+        assets: '자산',
+        highlights: '주요 특징',
+        paymentMethods: '결제 방법',
+        learnMore: '자세히 알아보기',
+      },
+      visitSite: '사이트 방문',
+      minDeposit: '최소 입금액',
+      totalAssets: '총 자산',
+    },
+    faq: {
+      title: '자주 묻는 질문',
+      questions: {
+        whatIsOnlineTrading: '온라인 거래란 무엇인가요?',
+        whyBuyStocks: '왜 사람들은 주식을 살까요?',
+        howChooseStock: '주식을 어떻게 선택하나요?',
+        howChooseBroker: '브로커를 어떻게 선택하나요?',
+        regulatedBroker: '규제된 브로커로 자금을 운용하는 것이 더 나은가요?',
+        minimumAmount: '시작할 최소 금액은 얼마인가요?',
+      },
+      loading: '자주 묻는 질문을 불러오는 중...',
+      error: '자주 묻는 질문을 불러오는 중 오류가 발생했습니다. 나중에 다시 시도해 주세요.',
+      helpText: '아직 질문이 있으신가요? 저희가 도와드리겠습니다.',
+      contactSupport: '지원 문의',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com은 더 나은 결정을 내릴 수 있도록 필요한 도구를 제공하는 것을 목표로 하는 독립적인 비교 플랫폼 및 정보 서비스입니다. 저희는 독립적이지만, 이 사이트에 표시되는 제안은 ChooseStockBroker.com이 보상을 받는 회사들로부터 제공됩니다.',
+      riskWarning:
+        '주식, 레버리지 OTC 파생상품 및 기타 유통 가능한 증권에 대한 거래 및 투자는 자본을 위험에 노출시킬 수 있으며 고위험 사업으로 간주됩니다. 이는 경제적 위험, 인플레이션, 시장 가치 변동 등 다양한 변수에 따라 다릅니다. 레버리지 OTC 파생상품은 복잡한 금융상품이며 레버리지로 인해 빠르게 손실을 볼 위험이 높습니다. 레버리지 OTC 파생상품을 거래하는 소매 투자자 계좌의 74-89%는 손실을 보고 있습니다. 자금을 잃을 위험을 감수할 여유가 있는지 고려해야 합니다.',
+      contactInfo: '연락처 정보',
+      allRightsReserved: '모든 권리 보유.',
+      termsConditions: '이용 약관',
+      privacyPolicy: '개인정보 보호정책',
+      cookiePolicy: '쿠키 정책',
+    },
+    countries: {
+      selectCountry: '국가 선택',
+      vietnam: '베트남 (Vietnam)',
+      unitedKingdom: '영국 (United Kingdom)',
+      unitedStates: '미국 (United States)',
+      germany: '독일 (Germany)',
+      france: '프랑스 (France)',
+      spain: '스페인 (Spain)',
+      italy: '이탈리아 (Italy)',
+      portugal: '포르투갈 (Portugal)',
+      russia: '러시아 (Russia)',
+      japan: '일본 (Japan)',
+      korea: '대한민국 (South Korea)',
+      china: '중국 (China)',
+    },
+  },
+  zh: {
+    site: {
+      title: 'ChooseStockBroker - 比较2025年顶级在线交易经纪商',
+      description: '比较全球最优秀的股票经纪商。寻找收费低、平台出色、服务卓越的受监管经纪商。',
+      tagline: '比较2025年的在线交易经纪商',
+      metaDescription:
+        'ChooseStockBroker 比较全球受监管的在线交易经纪商，重点突出低费用、强大的平台和卓越服务，帮助您在2025年自信地交易金融资产。',
+    },
+    navigation: {
+      home: '首页',
+      brokers: '在线经纪商',
+      about: '关于',
+      contact: '联系',
+    },
+    hero: {
+      title: '比较2025年的在线交易经纪商',
+      subtitle:
+        '在下方您可以找到用于交易金融资产的顶级受监管经纪商。无佣金，提款快捷。通过顶级在线交易平台/应用免费访问数千种交易资产。',
+      selectCountry: '选择您的国家',
+      viewTopBrokers: '查看顶级经纪商',
+      learnMore: '了解更多',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: '经纪商',
+        deposit: '存款',
+        assets: '资产',
+        highlights: '亮点',
+        paymentMethods: '支付方式',
+        learnMore: '了解更多',
+      },
+      visitSite: '访问网站',
+      minDeposit: '最低存款',
+      totalAssets: '总资产',
+    },
+    faq: {
+      title: '常见问题',
+      questions: {
+        whatIsOnlineTrading: '什么是在线交易？',
+        whyBuyStocks: '人们为什么买股票？',
+        howChooseStock: '如何选择股票？',
+        howChooseBroker: '如何选择经纪商？',
+        regulatedBroker: '与受监管经纪商合作是否更好？',
+        minimumAmount: '起步资金最低是多少？',
+      },
+      loading: '正在加载常见问题...',
+      error: '加载常见问题时出错。请稍后重试。',
+      helpText: '还有疑问吗？我们随时为您提供帮助。',
+      contactSupport: '联系支持',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com是一个独立的比较平台和信息服务，旨在为您提供做出更好决策所需的工具。尽管我们是独立的，但本网站出现的优惠来自于ChooseStockBroker.com获得报酬的公司。',
+      riskWarning:
+        '交易和投资股票、杠杆式场外衍生品及其他可交易证券可能使您的资本承受风险，并被视为高风险业务，取决于经济风险、通货膨胀、市场价值变化等多种因素。杠杆式场外衍生品是一种复杂工具，由于杠杆作用，有快速亏损的高风险。在交易杠杆式场外衍生品时，74-89%的散户投资者账户亏损。您应考虑是否承受得起亏损资金的高风险。',
+      contactInfo: '联系信息',
+      allRightsReserved: '版权所有.',
+      termsConditions: '条款和条件',
+      privacyPolicy: '隐私政策',
+      cookiePolicy: 'Cookie 政策',
+    },
+    countries: {
+      selectCountry: '选择国家',
+      vietnam: '越南 (Vietnam)',
+      unitedKingdom: '英国 (United Kingdom)',
+      unitedStates: '美国 (United States)',
+      germany: '德国 (Germany)',
+      france: '法国 (France)',
+      spain: '西班牙 (Spain)',
+      italy: '意大利 (Italy)',
+      portugal: '葡萄牙 (Portugal)',
+      russia: '俄罗斯 (Russia)',
+      japan: '日本 (Japan)',
+      korea: '韩国 (South Korea)',
+      china: '中国 (China)',
+    },
+  },
+  hi: {
+    site: {
+      title: 'ChooseStockBroker - 2025 में शीर्ष ऑनलाइन ट्रेडिंग ब्रोकरों की तुलना करें',
+      description:
+        'दुनिया भर के सबसे अच्छे स्टॉक ब्रोकर्स की तुलना करें। कम शुल्क, शानदार प्लेटफॉर्म और उत्कृष्ट सेवा वाले विनियमित ब्रोकर्स खोजें।',
+      tagline: '2025 में ऑनलाइन ट्रेडिंग ब्रोकरों की तुलना करें',
+      metaDescription:
+        'ChooseStockBroker विश्वभर के विनियमित ऑनलाइन ट्रेडिंग ब्रोकर्स की तुलना करता है, कम शुल्क, शक्तिशाली प्लेटफॉर्म और उत्कृष्ट सेवा को उजागर करता है ताकि आप 2025 में वित्तीय परिसंपत्तियों का आत्मविश्वास के साथ व्यापार कर सकें।',
+    },
+    navigation: {
+      home: 'होम',
+      brokers: 'ऑनलाइन ब्रोकर्स',
+      about: 'के बारे में',
+      contact: 'संपर्क',
+    },
+    hero: {
+      title: '2025 में ऑनलाइन ट्रेडिंग ब्रोकरों की तुलना करें',
+      subtitle:
+        'नीचे आप वित्तीय परिसंपत्तियों का व्यापार करने के लिए शीर्ष विनियमित ट्रेडिंग ब्रोकर्स खोज सकते हैं। कोई कमीशन नहीं, तेज़ निकासी। शीर्ष ऑनलाइन ट्रेडिंग प्लेटफ़ॉर्म/ऐप्स से हजारों ट्रेडिंग परिसंपत्तियों तक मुफ्त पहुँच प्राप्त करें।',
+      selectCountry: 'अपना देश चुनें',
+      viewTopBrokers: 'शीर्ष ब्रोकर्स देखें',
+      learnMore: 'और जानें',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: 'ब्रोकर',
+        deposit: 'जमा',
+        assets: 'परिसंपत्तियाँ',
+        highlights: 'मुख्य विशेषताएँ',
+        paymentMethods: 'भुगतान विधियाँ',
+        learnMore: 'और जानें',
+      },
+      visitSite: 'साइट पर जाएँ',
+      minDeposit: 'न्यूनतम जमा',
+      totalAssets: 'कुल परिसंपत्तियाँ',
+    },
+    faq: {
+      title: 'सामान्य प्रश्न',
+      questions: {
+        whatIsOnlineTrading: 'ऑनलाइन ट्रेडिंग क्या है?',
+        whyBuyStocks: 'लोग स्टॉक्स क्यों खरीदते हैं?',
+        howChooseStock: 'स्टॉक कैसे चुनें?',
+        howChooseBroker: 'ब्रोकर कैसे चुनें?',
+        regulatedBroker: 'क्या विनियमित ब्रोकर के साथ निधि लगाना बेहतर है?',
+        minimumAmount: 'आरंभ करने के लिए न्यूनतम राशि क्या है?',
+      },
+      loading: 'सामान्य प्रश्न लोड हो रहे हैं...',
+      error: 'सामान्य प्रश्न लोड करने में त्रुटि हुई। कृपया बाद में पुनः प्रयास करें।',
+      helpText: 'अभी भी प्रश्न हैं? हम मदद के लिए यहाँ हैं।',
+      contactSupport: 'सहायता से संपर्क करें',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com एक स्वतंत्र तुलना मंच और सूचना सेवा है जिसका उद्देश्य आपको बेहतर निर्णय लेने के लिए आवश्यक उपकरण प्रदान करना है। हालांकि हम स्वतंत्र हैं, इस साइट पर प्रदर्शित ऑफ़र उन कंपनियों से आते हैं जिनसे ChooseStockBroker.com को पारिश्रमिक प्राप्त होता है।',
+      riskWarning:
+        'शेयरों, लीवरेज्ड OTC डेरिवेटिव्स और अन्य विनिमय योग्य प्रतिभूतियों में ट्रेडिंग और निवेश आपके पूंजी को जोखिम में डाल सकती है और इसे एक उच्च जोखिम वाला व्यवसाय माना जाता है जो कई परिवर्तनीय कारकों जैसे आर्थिक जोखिम, मुद्रास्फीति, बाजार मूल्य में परिवर्तन पर निर्भर करता है। लीवरेज्ड OTC डेरिवेटिव्स जटिल उपकरण हैं और लीवरेज के कारण तेजी से धन खोने का उच्च जोखिम होता है। लीवरेज्ड OTC डेरिवेटिव्स का व्यापार करते समय 74-89% खुदरा निवेशक खातों को नुकसान होता है। आपको विचार करना चाहिए कि क्या आप अपने पैसे खोने के अधिक जोखिम को वहन कर सकते हैं।',
+      contactInfo: 'संपर्क जानकारी',
+      allRightsReserved: 'सभी अधिकार सुरक्षित.',
+      termsConditions: 'नियम और शर्तें',
+      privacyPolicy: 'गोपनीयता नीति',
+      cookiePolicy: 'कुकी नीति',
+    },
+    countries: {
+      selectCountry: 'देश चुनें',
+      vietnam: 'वियतनाम (Vietnam)',
+      unitedKingdom: 'यूनाइटेड किंगडम (United Kingdom)',
+      unitedStates: 'संयुक्त राज्य (United States)',
+      germany: 'जर्मनी (Germany)',
+      france: 'फ्रांस (France)',
+      spain: 'स्पेन (Spain)',
+      italy: 'इटली (Italy)',
+      portugal: 'पुर्तगाल (Portugal)',
+      russia: 'रूस (Russia)',
+      japan: 'जापान (Japan)',
+      korea: 'दक्षिण कोरिया (South Korea)',
+      china: 'चीन (China)',
+    },
+  },
+  ms: {
+    site: {
+      title: 'ChooseStockBroker - Bandingkan Broker Perdagangan Dalam Talian Terbaik Tahun 2025',
+      description:
+        'Bandingkan broker saham terbaik di seluruh dunia. Cari broker yang dikawal selia dengan yuran rendah, platform hebat dan perkhidmatan cemerlang.',
+      tagline: 'Bandingkan Broker Perdagangan Dalam Talian pada tahun 2025',
+      metaDescription:
+        'ChooseStockBroker membandingkan broker perdagangan dalam talian yang dikawal selia di seluruh dunia, menekankan yuran rendah, platform kuat dan perkhidmatan unggul supaya anda boleh berdagang aset kewangan dengan yakin pada tahun 2025.',
+    },
+    navigation: {
+      home: 'Utama',
+      brokers: 'Broker Dalam Talian',
+      about: 'Tentang',
+      contact: 'Hubungi',
+    },
+    hero: {
+      title: 'Bandingkan Broker Perdagangan Dalam Talian pada tahun 2025',
+      subtitle:
+        'Di bawah bạn có thể tìm các nhà môi giới giao dịch được quy định hàng đầu để giao dịch các tài sản tài chính. Tiêu chuẩn không hoa hồng, rút tiền nhanh. Dapatkan akses percuma kepada ribuan aset perdagangan dengan platform/aplikasi perdagangan dalam talian teratas.',
+      selectCountry: 'Pilih Negara Anda',
+      viewTopBrokers: 'Lihat Broker Teratas',
+      learnMore: 'Ketahui Lebih Lanjut',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: 'Broker',
+        deposit: 'Deposit',
+        assets: 'Aset',
+        highlights: 'Sorotan',
+        paymentMethods: 'Kaedah Pembayaran',
+        learnMore: 'Ketahui Lebih Lanjut',
+      },
+      visitSite: 'Lawati Laman Web',
+      minDeposit: 'Deposit Minimum',
+      totalAssets: 'Jumlah Aset',
+    },
+    faq: {
+      title: 'Soalan Lazim',
+      questions: {
+        whatIsOnlineTrading: 'Apakah Perdagangan Dalam Talian?',
+        whyBuyStocks: 'Mengapa Orang Membeli Saham?',
+        howChooseStock: 'Bagaimana Memilih Saham?',
+        howChooseBroker: 'Bagaimana Memilih Broker?',
+        regulatedBroker: 'Adakah Lebih Baik Membiayai dengan Broker yang Dikawal Selia?',
+        minimumAmount: 'Apakah Jumlah Minimum untuk Bermula?',
+      },
+      loading: 'Memuatkan Soalan Lazim...',
+      error: 'Ralat memuatkan Soalan Lazim. Sila cuba lagi nanti.',
+      helpText: 'Masih ada soalan? Kami sedia membantu.',
+      contactSupport: 'Hubungi Sokongan',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com ialah platform perbandingan dan perkhidmatan maklumat bebas yang bertujuan menyediakan anda dengan alat yang anda perlukan untuk membuat keputusan yang lebih baik. Walaupun kami bebas, tawaran yang muncul di laman ini berasal dari syarikat yang mana ChooseStockBroker.com menerima pampasan.',
+      riskWarning:
+        'Perdagangan dan pelaburan dalam saham, derivatif OTC berleveraj dan sekuriti lain yang boleh niaga mungkin meletakkan modal anda berisiko dan dianggap perniagaan berisiko tinggi serta bergantung kepada banyak faktor berubah termasuk risiko ekonomi, inflasi, perubahan nilai pasaran. Derivatif OTC berleveraj adalah instrumen yang kompleks dan mempunyai risiko tinggi kehilangan wang dengan cepat disebabkan leveraj. Di antara 74-89% akaun pelabur runcit kehilangan wang apabila berdagang derivatif OTC berleveraj. Anda harus mempertimbangkan sama ada anda mampu menanggung risiko tinggi kehilangan wang anda.',
+      contactInfo: 'Maklumat Perhubungan',
+      allRightsReserved: 'HAK CIPTA TERPELIHARA.',
+      termsConditions: 'Terma & Syarat',
+      privacyPolicy: 'Dasar Privasi',
+      cookiePolicy: 'Dasar Kuki',
+    },
+    countries: {
+      selectCountry: 'Pilih Negara',
+      vietnam: 'Vietnam (Vietnam)',
+      unitedKingdom: 'United Kingdom (United Kingdom)',
+      unitedStates: 'Amerika Syarikat (United States)',
+      germany: 'Jerman (Germany)',
+      france: 'Perancis (France)',
+      spain: 'Sepanyol (Spain)',
+      italy: 'Itali (Italy)',
+      portugal: 'Portugal (Portugal)',
+      russia: 'Rusia (Russia)',
+      japan: 'Jepun (Japan)',
+      korea: 'Korea Selatan (South Korea)',
+      china: 'China (China)',
+    },
+  },
+  ur: {
+    site: {
+      title: 'ChooseStockBroker - 2025 میں بہترین آن لائن ٹریڈنگ بروکرز کا موازنہ کریں',
+      description:
+        'دنیا بھر کے بہترین اسٹاک بروکرز کا موازنہ کریں۔ کم فیس، بہترین پلیٹ فارمز اور عمدہ سروس والے منظم بروکرز تلاش کریں۔',
+      tagline: '2025 میں آن لائن ٹریڈنگ بروکرز کا موازنہ کریں',
+      metaDescription:
+        'ChooseStockBroker دنیا بھر میں منظم آن لائن ٹریڈنگ بروکرز کا موازنہ کرتا ہے، کم فیس، طاقتور پلیٹ فارمز اور اعلیٰ سروس کو اجاگر کرتا ہے تاکہ آپ 2025 میں مالیاتی اثاثوں کو اعتماد کے ساتھ تجارت کر سکیں۔',
+    },
+    navigation: {
+      home: 'ہوم',
+      brokers: 'آن لائن بروکرز',
+      about: 'متعلق',
+      contact: 'رابطہ',
+    },
+    hero: {
+      title: '2025 میں آن لائن ٹریڈنگ بروکرز کا موازنہ کریں',
+      subtitle:
+        'ذیل میں آپ مالیاتی اثاثوں کی تجارت کے لیے اعلیٰ ترین منظم بروکرز تلاش کر سکتے ہیں۔ کوئی کمیشن نہیں، فوری رقم نکلوانا۔ بہترین آن لائن ٹریڈنگ پلیٹ فارم/ایپس کے ساتھ ہزاروں تجارتی اثاثوں تک مفت رسائی حاصل کریں۔',
+      selectCountry: 'اپنا ملک منتخب کریں',
+      viewTopBrokers: 'بہترین بروکرز دیکھیں',
+      learnMore: 'مزید جانیں',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: 'بروکر',
+        deposit: 'ڈپازٹ',
+        assets: 'اثاثے',
+        highlights: 'نمایاں نکات',
+        paymentMethods: 'ادائیگی کے طریقے',
+        learnMore: 'مزید جانیں',
+      },
+      visitSite: 'ویب سائٹ دیکھیں',
+      minDeposit: 'کم سے کم ڈپازٹ',
+      totalAssets: 'کل اثاثے',
+    },
+    faq: {
+      title: 'عمومی سوالات',
+      questions: {
+        whatIsOnlineTrading: 'آن لائن ٹریڈنگ کیا ہے؟',
+        whyBuyStocks: 'لوگ اسٹاک کیوں خریدتے ہیں؟',
+        howChooseStock: 'اسٹاک کیسے منتخب کریں؟',
+        howChooseBroker: 'بروکر کیسے منتخب کریں؟',
+        regulatedBroker: 'کیا منظم بروکر کے ساتھ سرمایہ لگانا بہتر ہے؟',
+        minimumAmount: 'شروع کرنے کے لیے کم از کم رقم کیا ہے؟',
+      },
+      loading: 'عمومی سوالات لوڈ ہو رہے ہیں...',
+      error: 'عمومی سوالات لوڈ کرنے میں خرابی ہوئی۔ براہ کرم بعد میں دوبارہ کوشش کریں۔',
+      helpText: 'کیا ابھی بھی سوالات ہیں؟ ہم مدد کے لیے حاضر ہیں۔',
+      contactSupport: 'سپورٹ سے رابطہ کریں',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com ایک آزاد موازنہ پلیٹ فارم اور معلوماتی سروس ہے جس کا مقصد آپ کو بہتر فیصلے کرنے کے لیے درکار ٹول فراہم کرنا ہے۔ اگرچہ ہم آزاد ہیں، لیکن اس سائٹ پر ظاہر ہونے والی پیشکشیں ان کمپنیوں کی طرف سے ہیں جن سے ChooseStockBroker.com کو معاوضہ ملتا ہے۔',
+      riskWarning:
+        'اسٹاکس، لیوریجڈ OTC ڈیریویٹیوز اور دیگر قابل تجارت سیکیورٹیز میں تجارت اور سرمایہ کاری آپ کے سرمائے کو خطرے میں ڈال سکتی ہے اور اسے ایک اعلیٰ خطرہ والا کاروبار سمجھا جاتا ہے جو کئی متغیر عوامل جیسے معاشی خطرات، مہنگائی، مارکیٹ ویلیو میں تبدیلی پر منحصر ہے۔ لیوریجڈ او ٹی سی ڈیریویٹیوز پیچیدہ آلات ہیں اور لیوریج کی وجہ سے پیسہ تیزی سے کھونے کا زیادہ خطرہ رکھتے ہیں۔ لیوریجڈ او ٹی سی ڈیریویٹیوز کی تجارت کرتے وقت 74-89 فیصد ریٹیل سرمایہ کار اکاؤنٹس کو نقصان ہوتا ہے۔ آپ کو غور کرنا چاہیے کہ آیا آپ اپنے پیسے کھونے کے زیادہ خطرے کو برداشت کر سکتے ہیں۔',
+      contactInfo: 'رابطے کی معلومات',
+      allRightsReserved: 'تمام حقوق محفوظ ہیں۔',
+      termsConditions: 'شرائط و ضوابط',
+      privacyPolicy: 'رازداری کی پالیسی',
+      cookiePolicy: 'کوکی پالیسی',
+    },
+    countries: {
+      selectCountry: 'ملک منتخب کریں',
+      vietnam: 'ویتنام (Vietnam)',
+      unitedKingdom: 'برطانیہ (United Kingdom)',
+      unitedStates: 'امریکہ (United States)',
+      germany: 'جرمنی (Germany)',
+      france: 'فرانس (France)',
+      spain: 'سپین (Spain)',
+      italy: 'اٹلی (Italy)',
+      portugal: 'پرتگال (Portugal)',
+      russia: 'روس (Russia)',
+      japan: 'جاپان (Japan)',
+      korea: 'جنوبی کوریا (South Korea)',
+      china: 'چین (China)',
+    },
+  },
+  ta: {
+    site: {
+      title: 'ChooseStockBroker - 2025 இல் சிறந்த ஆன்லைன் வர்த்தக புரோக்கர்களை ஒப்பிடுங்கள்',
+      description:
+        'உலகளாவிய சிறந்த பங்கு புரோக்கர்களை ஒப்பிடுங்கள். குறைந்த கட்டணங்கள், சிறந்த தளங்கள் மற்றும் சிறப்பான சேவையுடன் ஒழுங்கு செய்யப்பட்ட புரோக்கர்களைக் கண்டறியுங்கள்.',
+      tagline: '2025 இல் ஆன்லைன் வர்த்தக புரோக்கர்களை ஒப்பிடுங்கள்',
+      metaDescription:
+        'ChooseStockBroker உலகம் முழுவதிலும் உள்ள ஒழுங்குபடுத்தப்பட்ட ஆன்லைன் வர்த்தக புரோக்கர்களை ஒப்பிடுகிறது, குறைந்த கட்டணங்கள், சக்திவாய்ந்த தளங்கள் மற்றும் சிறந்த சேவையை வலியுறுத்துகிறது, 2025 இல் நீங்கள் நிதி சொத்துகளை தன்னம்பிக்கையுடன் வர்த்தகம் செய்ய முடியும்.',
+    },
+    navigation: {
+      home: 'முகப்பு',
+      brokers: 'ஆன்லைன் புரோக்கர்கள்',
+      about: 'பற்றி',
+      contact: 'தொடர்பு',
+    },
+    hero: {
+      title: '2025 இல் ஆன்லைன் வர்த்தக புரோக்கர்களை ஒப்பிடுங்கள்',
+      subtitle:
+        'கீழே நீங்கள் நிதி சொத்துகளை வர்த்தகம் செய்ய சிறந்த ஒழுங்குபடுத்தப்பட்ட புரோக்கர்களைக் காணலாம். கமிஷன் இல்லை, விரைவு பண வாபஸ். முன்னணி ஆன்லைன் வர்த்தக தளங்கள்/ஆப்புகளுடன் ஆயிரக்கணக்கான வர்த்தக சொத்துகளை இலவசமாக அணுகுங்கள்.',
+      selectCountry: 'உங்கள் நாட்டை தேர்ந்தெடுக்கவும்',
+      viewTopBrokers: 'சிறந்த புரோக்கர்களைக் காண்க',
+      learnMore: 'மேலும் அறிக',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: 'புரோக்கர்',
+        deposit: 'வைப்புத் தொகை',
+        assets: 'சொத்துகள்',
+        highlights: 'முக்கிய அம்சங்கள்',
+        paymentMethods: 'கட்டண முறைகள்',
+        learnMore: 'மேலும் அறிக',
+      },
+      visitSite: 'தளத்தை பார்வையிடுக',
+      minDeposit: 'குறைந்த வைப்பு',
+      totalAssets: 'மொத்த சொத்துகள்',
+    },
+    faq: {
+      title: 'அடிக்கடி கேட்கப்படும் கேள்விகள்',
+      questions: {
+        whatIsOnlineTrading: 'ஆன்லைன் வர்த்தகம் என்றால் என்ன?',
+        whyBuyStocks: 'மக்கள் ஏன் பங்குகளை வாங்குகிறார்கள்?',
+        howChooseStock: 'ஒரு பங்கை எவ்வாறு தேர்வு செய்வது?',
+        howChooseBroker: 'ஒரு புரோக்கரை எவ்வாறு தேர்வு செய்வது?',
+        regulatedBroker: 'ஒழுங்குபடுத்தப்பட்ட புரோக்கருடன் முதலீடு செய்வது நல்லதா?',
+        minimumAmount: 'தொடங்குவதற்கு குறைந்த தொகை எவ்வளவு?',
+      },
+      loading: 'அடிக்கடி கேட்கப்படும் கேள்விகள் ஏற்றப்படுகிறது...',
+      error:
+        'அடிக்கடி கேட்கப்படும் கேள்விகளை ஏற்றுவதில் பிழை. தயவுசெய்து பின்னர் மீண்டும் முயற்சிக்கவும்.',
+      helpText: 'இன்னும் கேள்விகள் உள்ளனவா? நாங்கள் உதவ தயாராக உள்ளோம்.',
+      contactSupport: 'ஆதரவைக் தொடர்பு கொள்ளவும்',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com என்பது சுயாதீனமான ஒப்பீட்டு தளம் மற்றும் தகவல் சேவை. இது உங்களுக்கு சிறந்த முடிவுகளை எடுக்க தேவையான கருவிகளை வழங்குவதை நோக்கமாகக் கொண்டுள்ளது. நாங்கள் சுயாதீனமாக இருந்தாலும், இந்த தளத்தில் தோன்றும் சலுகைகள் ChooseStockBroker.com பரிசு பெறும் நிறுவனங்களிடமிருந்து வருகிறது.',
+      riskWarning:
+        'பங்குகள், லிவரேஜ் உள்ள OTC அடைப்பணைகள் மற்றும் பிற பரிமாற்றக்கூடிய பாதுகாப்புகளில் வர்த்தகம் மற்றும் முதலீடு செய்வது உங்கள் மூலதனத்தை ஆபத்து நிலையில் தள்ளக்கூடும் மற்றும் இது ஒரு உயர் ஆபத்துள்ள வணிகமாகக் கருதப்படுகிறது. இது பொருளாதார ஆபத்துகள், பணவீக்கம், சந்தை மதிப்பில் மாற்றம் போன்ற பல மாறி காரணிகளுக்கு சார்ந்துள்ளது. லிவரேஜ் OTC அடைப்பணிகள் சிக்கலான கருவிகளாகும் மற்றும் லிவரேஜின் காரணமாக விரைவில் பணத்தை இழக்கும் உயர் ஆபத்தை கொண்டுள்ளன. லிவரேஜ் OTC அடைப்பணிகளை வர்த்தகம் செய்வதில் 74-89% சில்லறை முதலீட்டாளர் கணக்குகள் பண இழப்பை எதிர்கொள்கின்றன. உங்கள் பணத்தை இழக்கும் உயர் ஆபத்தை நீங்கள் ஏற்றுக்கொள்ள முடியுமா என்று நீங்கள் பரிசீலிக்க வேண்டும்.',
+      contactInfo: 'தொடர்பு விவரங்கள்',
+      allRightsReserved: 'அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டுள்ளன.',
+      termsConditions: 'விதிமுறைகள் மற்றும் நிபந்தன்கள்',
+      privacyPolicy: 'தனியுரிமை கொள்கை',
+      cookiePolicy: 'குக்கி கொள்கை',
+    },
+    countries: {
+      selectCountry: 'நாட்டை தேர்ந்தெடுக்கவும்',
+      vietnam: 'வியட்நாம் (Vietnam)',
+      unitedKingdom: 'ஐக்கிய இராச்சியம் (United Kingdom)',
+      unitedStates: 'அமெரிக்கா (United States)',
+      germany: 'ஜெர்மனி (Germany)',
+      france: 'பிரான்ஸ் (France)',
+      spain: 'ஸ்பெயின் (Spain)',
+      italy: 'இத்தாலி (Italy)',
+      portugal: 'போர்ச்சுகல் (Portugal)',
+      russia: 'ரஷ்யா (Russia)',
+      japan: 'ஜப்பான் (Japan)',
+      korea: 'தென் கொரியா (South Korea)',
+      china: 'சீனா (China)',
+    },
+  },
+  es: {
+    site: {
+      title: 'ChooseStockBroker - Compara los mejores corredores de trading online de 2025',
+      description:
+        'Compara los mejores corredores de bolsa del mundo. Encuentra corredores regulados con bajas comisiones, excelentes plataformas y servicio excepcional.',
+      tagline: 'Compara corredores de trading online en 2025',
+      metaDescription:
+        'ChooseStockBroker compara corredores de trading online regulados en todo el mundo, destacando comisiones bajas, plataformas potentes y servicio superior para que puedas negociar activos financieros con confianza en 2025.',
+    },
+    navigation: {
+      home: 'Inicio',
+      brokers: 'Corredores Online',
+      about: 'Acerca de',
+      contact: 'Contacto',
+    },
+    hero: {
+      title: 'Compara corredores de trading online en 2025',
+      subtitle:
+        'A continuación puedes encontrar los corredores de trading regulados más destacados para operar activos financieros. Sin comisiones, retiros rápidos. Obtén acceso gratuito a miles de activos de trading con las principales plataformas/aplicaciones de trading en línea.',
+      selectCountry: 'Selecciona tu país',
+      viewTopBrokers: 'Ver corredores destacados',
+      learnMore: 'Más información',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: 'Corredor',
+        deposit: 'Depósito',
+        assets: 'Activos',
+        highlights: 'Destacados',
+        paymentMethods: 'Métodos de pago',
+        learnMore: 'Más información',
+      },
+      visitSite: 'Visitar sitio',
+      minDeposit: 'Depósito mínimo',
+      totalAssets: 'Activos totales',
+    },
+    faq: {
+      title: 'Preguntas Frecuentes',
+      questions: {
+        whatIsOnlineTrading: '¿Qué es el trading online?',
+        whyBuyStocks: '¿Por qué la gente compra acciones?',
+        howChooseStock: '¿Cómo elegir una acción?',
+        howChooseBroker: '¿Cómo elegir un corredor?',
+        regulatedBroker: '¿Es mejor invertir con un corredor regulado?',
+        minimumAmount: '¿Cuál es el monto mínimo para empezar?',
+      },
+      loading: 'Cargando preguntas frecuentes...',
+      error: 'Error al cargar las preguntas frecuentes. Inténtalo de nuevo más tarde.',
+      helpText: '¿Aún tienes preguntas? Estamos aquí para ayudarte.',
+      contactSupport: 'Contactar soporte',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com es una plataforma de comparación independiente y servicio de información que busca brindarte las herramientas que necesitas para tomar mejores decisiones. Aunque somos independientes, las ofertas que aparecen en este sitio provienen de empresas de las cuales ChooseStockBroker.com recibe compensación.',
+      riskWarning:
+        'Operar e invertir en acciones, derivados OTC apalancados y otros valores negociables puede poner tu capital en riesgo y se considera un negocio de alto riesgo que depende de muchos factores variables, incluyendo riesgos económicos, inflación, cambios en el valor de mercado. Los derivados OTC apalancados son instrumentos complejos y conllevan un alto riesgo de perder dinero rápidamente debido al apalancamiento. Entre el 74-89% de las cuentas de inversionistas minoristas pierden dinero al operar derivados OTC apalancados. Debes considerar si puedes afrontar el alto riesgo de perder tu dinero.',
+      contactInfo: 'Información de contacto',
+      allRightsReserved: 'TODOS LOS DERECHOS RESERVADOS.',
+      termsConditions: 'Términos y condiciones',
+      privacyPolicy: 'Política de privacidad',
+      cookiePolicy: 'Política de cookies',
+    },
+    countries: {
+      selectCountry: 'Seleccionar país',
+      vietnam: 'Vietnam (Vietnam)',
+      unitedKingdom: 'Reino Unido (United Kingdom)',
+      unitedStates: 'Estados Unidos (United States)',
+      germany: 'Alemania (Germany)',
+      france: 'Francia (France)',
+      spain: 'España (Spain)',
+      italy: 'Italia (Italy)',
+      portugal: 'Portugal (Portugal)',
+      russia: 'Rusia (Russia)',
+      japan: 'Japón (Japan)',
+      korea: 'Corea del Sur (South Korea)',
+      china: 'China (China)',
+    },
+  },
+  pt: {
+    site: {
+      title: 'ChooseStockBroker - Compare os melhores corretores de negociação online em 2025',
+      description:
+        'Compare os melhores corretores de ações do mundo. Encontre corretores regulados com taxas baixas, plataformas excelentes e serviço excepcional.',
+      tagline: 'Compare os corretores de negociação online em 2025',
+      metaDescription:
+        'ChooseStockBroker compara corretores de negociação online regulados no mundo todo, destacando taxas baixas, plataformas poderosas e serviço superior para que você possa negociar ativos financeiros com confiança em 2025.',
+    },
+    navigation: {
+      home: 'Início',
+      brokers: 'Corretores Online',
+      about: 'Sobre',
+      contact: 'Contato',
+    },
+    hero: {
+      title: 'Compare os corretores de negociação online em 2025',
+      subtitle:
+        'Abaixo você pode encontrar os principais corretores de negociação regulados para negociar ativos financeiros. Sem comissões, saques rápidos. Obtenha acesso gratuito a milhares de ativos de negociação com as melhores plataformas/aplicativos de negociação online.',
+      selectCountry: 'Selecione seu país',
+      viewTopBrokers: 'Ver melhores corretores',
+      learnMore: 'Saiba mais',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: 'Corretor',
+        deposit: 'Depósito',
+        assets: 'Ativos',
+        highlights: 'Destaques',
+        paymentMethods: 'Métodos de pagamento',
+        learnMore: 'Saiba mais',
+      },
+      visitSite: 'Visitar site',
+      minDeposit: 'Depósito mínimo',
+      totalAssets: 'Ativos totais',
+    },
+    faq: {
+      title: 'Perguntas Frequentes',
+      questions: {
+        whatIsOnlineTrading: 'O que é negociação online?',
+        whyBuyStocks: 'Por que as pessoas compram ações?',
+        howChooseStock: 'Como escolher uma ação?',
+        howChooseBroker: 'Como escolher um corretor?',
+        regulatedBroker: 'É melhor investir com um corretor regulado?',
+        minimumAmount: 'Qual é o valor mínimo para começar?',
+      },
+      loading: 'Carregando perguntas frequentes...',
+      error: 'Erro ao carregar as perguntas frequentes. Tente novamente mais tarde.',
+      helpText: 'Ainda tem dúvidas? Estamos aqui para ajudar.',
+      contactSupport: 'Contactar o suporte',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com é uma plataforma de comparação e serviço de informação independente que tem como objetivo fornecer as ferramentas de que você precisa para tomar decisões melhores. Embora sejamos independentes, as ofertas que aparecem neste site são de empresas das quais o ChooseStockBroker.com recebe compensação.',
+      riskWarning:
+        'Negociar e investir em ações, derivativos OTC alavancados e outros títulos negociáveis pode colocar seu capital em risco e é considerado um negócio de alto risco, dependendo de muitos fatores variáveis, incluindo riscos econômicos, inflação e variação do valor de mercado. Derivativos OTC alavancados são instrumentos complexos e apresentam alto risco de perder dinheiro rapidamente devido à alavancagem. Entre 74-89% das contas de investidores de varejo perdem dinheiro ao negociar derivativos OTC alavancados. Você deve considerar se pode arcar com o alto risco de perder seu dinheiro.',
+      contactInfo: 'Informações de contato',
+      allRightsReserved: 'TODOS OS DIREITOS RESERVADOS.',
+      termsConditions: 'Termos e Condições',
+      privacyPolicy: 'Política de Privacidade',
+      cookiePolicy: 'Política de Cookies',
+    },
+    countries: {
+      selectCountry: 'Selecione o país',
+      vietnam: 'Vietnã (Vietnam)',
+      unitedKingdom: 'Reino Unido (United Kingdom)',
+      unitedStates: 'Estados Unidos (United States)',
+      germany: 'Alemanha (Germany)',
+      france: 'França (France)',
+      spain: 'Espanha (Spain)',
+      italy: 'Itália (Italy)',
+      portugal: 'Portugal (Portugal)',
+      russia: 'Rússia (Russia)',
+      japan: 'Japão (Japan)',
+      korea: 'Coreia do Sul (South Korea)',
+      china: 'China (China)',
+    },
+  },
+  id: {
+    site: {
+      title: 'ChooseStockBroker - Bandingkan broker perdagangan online terbaik tahun 2025',
+      description:
+        'Bandingkan broker saham terbaik di seluruh dunia. Temukan broker terregulasi dengan biaya rendah, platform hebat, dan layanan yang luar biasa.',
+      tagline: 'Bandingkan Broker Perdagangan Online pada 2025',
+      metaDescription:
+        'ChooseStockBroker membandingkan broker perdagangan online yang teregulasi di seluruh dunia, menonjolkan biaya rendah, platform kuat, dan layanan unggul sehingga Anda dapat memperdagangkan aset keuangan dengan percaya diri pada tahun 2025.',
+    },
+    navigation: {
+      home: 'Beranda',
+      brokers: 'Broker Online',
+      about: 'Tentang',
+      contact: 'Kontak',
+    },
+    hero: {
+      title: 'Bandingkan Broker Perdagangan Online pada 2025',
+      subtitle:
+        'Di bawah này Anda dapat menemukan broker trading terregulasi terbaik untuk memperdagangkan aset keuangan. Tanpa komisi, penarikan cepat. Dapatkan akses gratis ke ribuan aset trading dengan platform/aplikasi trading online terbaik.',
+      selectCountry: 'Pilih Negara Anda',
+      viewTopBrokers: 'Lihat Broker Teratas',
+      learnMore: 'Pelajari Lebih Lanjut',
+    },
+    brokers: {
+      tableHeaders: {
+        broker: 'Broker',
+        deposit: 'Deposit',
+        assets: 'Aset',
+        highlights: 'Sorotan',
+        paymentMethods: 'Metode Pembayaran',
+        learnMore: 'Pelajari Lebih Lanjut',
+      },
+      visitSite: 'Kunjungi Situs',
+      minDeposit: 'Deposit Minimum',
+      totalAssets: 'Total Aset',
+    },
+    faq: {
+      title: 'Pertanyaan Umum',
+      questions: {
+        whatIsOnlineTrading: 'Apa itu Perdagangan Online?',
+        whyBuyStocks: 'Mengapa orang membeli saham?',
+        howChooseStock: 'Bagaimana memilih saham?',
+        howChooseBroker: 'Bagaimana memilih broker?',
+        regulatedBroker: 'Apakah lebih baik mendanai dengan broker terregulasi?',
+        minimumAmount: 'Berapa jumlah minimum untuk memulai?',
+      },
+      loading: 'Memuat Pertanyaan Umum...',
+      error: 'Terjadi kesalahan saat memuat Pertanyaan Umum. Silakan coba lagi nanti.',
+      helpText: 'Masih punya pertanyaan? Kami siap membantu.',
+      contactSupport: 'Hubungi Dukungan',
+    },
+    footer: {
+      description:
+        'ChooseStockBroker.com adalah platform perbandingan independen dan layanan informasi yang bertujuan menyediakan alat yang Anda butuhkan untuk membuat keputusan yang lebih baik. Meskipun kami independen, penawaran yang muncul di situs ini berasal dari perusahaan yang memberikan kompensasi kepada ChooseStockBroker.com.',
+      riskWarning:
+        'Perdagangan dan investasi dalam saham, derivatif OTC ber-leverage dan sekuritas lainnya dapat menempatkan modal Anda dalam risiko dan dianggap sebagai bisnis berisiko tinggi, tergantung pada banyak faktor variabel termasuk risiko ekonomi, inflasi, perubahan nilai pasar. Derivatif OTC ber-leverage adalah instrumen yang kompleks dan membawa risiko tinggi kehilangan uang dengan cepat karena leverage. Antara 74-89% akun investor ritel kehilangan uang saat memperdagangkan derivatif OTC ber-leverage. Anda harus mempertimbangkan apakah Anda mampu menanggung risiko tinggi kehilangan uang Anda.',
+      contactInfo: 'Info Kontak',
+      allRightsReserved: 'SEMUA HAK DILINDUNGI.',
+      termsConditions: 'Syarat & Ketentuan',
+      privacyPolicy: 'Kebijakan Privasi',
+      cookiePolicy: 'Kebijakan Cookie',
+    },
+    countries: {
+      selectCountry: 'Pilih Negara',
+      vietnam: 'Vietnam (Vietnam)',
+      unitedKingdom: 'Inggris Raya (United Kingdom)',
+      unitedStates: 'Amerika Serikat (United States)',
+      germany: 'Jerman (Germany)',
+      france: 'Prancis (France)',
+      spain: 'Spanyol (Spain)',
+      italy: 'Italia (Italy)',
+      portugal: 'Portugal (Portugal)',
+      russia: 'Rusia (Russia)',
+      japan: 'Jepang (Japan)',
+      korea: 'Korea Selatan (South Korea)',
+      china: 'China (China)',
+    },
+  },
+} as const
+
+export type LangCode = keyof typeof TRANSLATIONS
+export type Translations = (typeof TRANSLATIONS)[LangCode]
+
+// Normalize locale like 'vi', 'vi-VN', 'ZH-CN', 'es-419' to base code in our map
+export function normalizeLocale(locale: string): LangCode {
+  const lc = (locale || 'en').toLowerCase()
+  // aliases
+  if (['vn', 'vi-vn', 'vietnamese'].includes(lc)) return 'vi'
+  if (['jp', 'ja-jp', 'japanese'].includes(lc)) return 'ja'
+  if (['kr', 'ko-kr', 'korean'].includes(lc)) return 'ko'
+  if (['cn', 'zh-cn', 'zh-tw', 'zh-hk', 'chinese'].includes(lc)) return 'zh'
+  if (['ms-my', 'malay'].includes(lc)) return 'ms'
+  if (['pt-br', 'pt-pt', 'portuguese'].includes(lc)) return 'pt'
+  if (['es-419', 'es-mx', 'es-ar', 'spanish'].includes(lc)) return 'es'
+  // base tag before region
+  const base = lc.split('-')[0] as LangCode
+  return (base in TRANSLATIONS ? base : 'en') as LangCode
+}
+
+export function getTranslations(locale: string): Translations {
+  const lang = normalizeLocale(locale)
+  return TRANSLATIONS[lang] || TRANSLATIONS.en
+}

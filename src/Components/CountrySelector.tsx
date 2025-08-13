@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { getCounties } from '@/actions/getCounties'
+import { getTranslations } from '../lib/language'
 
 interface Country {
   id: string
@@ -58,6 +59,29 @@ export function CountrySelector({
   const initialLanguageObj =
     (initialLocale && initialCountryObj.languages.find((l) => l.code === initialLocale)) ||
     initialCountryObj.languages[0]
+
+  const t = getTranslations(initialLocale || 'en')
+
+  // Resolve localized country name by ISO code where possible, otherwise fallback to provided name
+  const localizedCountryName = (code: string, fallbackName: string) => {
+    const keyMap: Record<string, keyof typeof t.countries> = {
+      vn: 'vietnam',
+      us: 'unitedStates',
+      gb: 'unitedKingdom',
+      de: 'germany',
+      fr: 'france',
+      es: 'spain',
+      it: 'italy',
+      pt: 'portugal',
+      ru: 'russia',
+      jp: 'japan',
+      kr: 'korea',
+      cn: 'china',
+    }
+    const raw = (code && code.toLowerCase()) || ''
+    const k = keyMap[raw] as keyof typeof t.countries | undefined
+    return k ? t.countries[k] : fallbackName
+  }
 
   const [countries, setCountries] = useState<Country[]>(fallbackCountries)
   const [_loading, setLoading] = useState(true)
@@ -142,7 +166,9 @@ export function CountrySelector({
             '🌍'
           )}
         </span>
-        <span className="text-sm font-medium text-slate-700">{selectedCountry.name}</span>
+        <span className="text-sm font-medium text-slate-700">
+          {localizedCountryName(selectedCountry.code, selectedCountry.name)}
+        </span>
         <span className="text-xs text-slate-500">({selectedLanguage.language})</span>
         <svg
           className={`w-4 h-4 text-slate-500 transition-transform ${isOpen ? 'rotate-180' : ''}`}
@@ -157,7 +183,9 @@ export function CountrySelector({
       {isOpen && (
         <div className="absolute top-full mt-2 w-80 bg-white border border-slate-200 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
           <div className="p-4">
-            <h3 className="text-sm font-semibold text-slate-800 mb-3">Select Country & Language</h3>
+            <h3 className="text-sm font-semibold text-slate-800 mb-3">
+              {t.countries.selectCountry}
+            </h3>
             <div className="space-y-2">
               {countries.map((country) => (
                 <div key={country.code} className="border-b border-slate-100 pb-2 last:border-b-0">
@@ -175,7 +203,9 @@ export function CountrySelector({
                         '🌍'
                       )}
                     </span>
-                    <span className="text-sm font-medium text-slate-700">{country.name}</span>
+                    <span className="text-sm font-medium text-slate-700">
+                      {localizedCountryName(country.code, country.name)}
+                    </span>
                   </div>
                   <div className="ml-7 flex flex-wrap gap-1">
                     {country.languages.map((language) => (

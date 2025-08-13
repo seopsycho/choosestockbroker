@@ -18,11 +18,11 @@ export default function LocalizedPage({ params }: PageProps) {
     <>
       <Header locale={locale} country={country} />
       <main>
-        <Hero />
-        <BrokerTable />
-        <FAQ />
+        <Hero locale={locale} country={country} />
+        <BrokerTable locale={locale} country={country} />
+        <FAQ locale={locale} country={country} />
       </main>
-      <Footer />
+      <Footer locale={locale} country={country} />
     </>
   )
 }

@@ -3,9 +3,11 @@
 import { useState } from 'react'
 import { CountrySelector } from './CountrySelector'
 import Link from 'next/link'
+import { getTranslations } from '../lib/language'
 
 export function Header({ locale, country }: { locale: string; country: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const t = getTranslations(locale)
 
   return (
     <header className="bg-white shadow-sm border-b">
@@ -22,13 +24,13 @@ export function Header({ locale, country }: { locale: string; country: string })
               href={`/${locale}/${country}`}
               className="text-slate-700 hover:text-blue-600 transition-colors"
             >
-              Home
+              {t.navigation.home}
             </Link>
             <Link
               href={`/${locale}/${country}/brokers`}
               className="text-slate-700 hover:text-blue-600 transition-colors"
             >
-              Online Brokers
+              {t.navigation.brokers}
             </Link>
             <CountrySelector locale={locale} country={country} />
           </div>
@@ -68,13 +70,13 @@ export function Header({ locale, country }: { locale: string; country: string })
                 href={`/${locale}/${country}`}
                 className="text-slate-700 hover:text-blue-600 transition-colors"
               >
-                Home
+                {t.navigation.home}
               </Link>
               <Link
                 href={`/${locale}/${country}/brokers`}
                 className="text-slate-700 hover:text-blue-600 transition-colors"
               >
-                Online Brokers
+                {t.navigation.brokers}
               </Link>
               <div className="pt-2">
                 <CountrySelector locale={locale} country={country} />

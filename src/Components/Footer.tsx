@@ -1,6 +1,9 @@
 import Link from 'next/link'
+import { getTranslations } from '../lib/language'
 
-export function Footer() {
+export function Footer({ locale, country }: { locale: string; country: string }) {
+  const t = getTranslations(locale)
+
   return (
     <footer className="bg-slate-800 text-white py-12">
       <div className="container mx-auto px-4">
@@ -9,8 +12,7 @@ export function Footer() {
           <div>
             <div className="text-2xl font-bold mb-4">ChooseStockBroker</div>
             <p className="text-slate-300 mb-4">
-              Your trusted guide to finding the best online trading brokers. Compare features, fees,
-              and services to make informed investment decisions.
+              {t.footer.description}
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="text-slate-300 hover:text-white transition-colors">
@@ -36,31 +38,43 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-slate-300 hover:text-white transition-colors">
-                  Home
+                <Link
+                  href={`/${locale}/${country}`}
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  {t.navigation.home}
                 </Link>
               </li>
               <li>
-                <Link href="/brokers" className="text-slate-300 hover:text-white transition-colors">
-                  Compare Brokers
+                <Link
+                  href={`/${locale}/${country}/brokers`}
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  {t.navigation.brokers}
                 </Link>
               </li>
               <li>
-                <Link href="/reviews" className="text-slate-300 hover:text-white transition-colors">
+                <Link
+                  href={`/${locale}/${country}/reviews`}
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
                   Broker Reviews
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/education"
+                  href={`/${locale}/${country}/education`}
                   className="text-slate-300 hover:text-white transition-colors"
                 >
                   Trading Education
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-slate-300 hover:text-white transition-colors">
-                  Contact Us
+                <Link
+                  href={`/${locale}/${country}/contact`}
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  {t.navigation.contact}
                 </Link>
               </li>
             </ul>
@@ -71,23 +85,32 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/privacy" className="text-slate-300 hover:text-white transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="text-slate-300 hover:text-white transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link href="/cookies" className="text-slate-300 hover:text-white transition-colors">
-                  Cookie Policy
+                <Link
+                  href={`/${locale}/${country}/privacy`}
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  {t.footer.privacyPolicy}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/disclaimer"
+                  href={`/${locale}/${country}/terms`}
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  {t.footer.termsConditions}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/${country}/cookies`}
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  {t.footer.cookiePolicy}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/${country}/disclaimer`}
                   className="text-slate-300 hover:text-white transition-colors"
                 >
                   Risk Disclaimer
@@ -96,18 +119,24 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Support / Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Support</h3>
+            <h3 className="text-lg font-semibold mb-4">{t.footer.contactInfo}</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/help" className="text-slate-300 hover:text-white transition-colors">
+                <Link
+                  href={`/${locale}/${country}/help`}
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
                   Help Center
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-slate-300 hover:text-white transition-colors">
-                  FAQ
+                <Link
+                  href={`/${locale}/${country}/faq`}
+                  className="text-slate-300 hover:text-white transition-colors"
+                >
+                  {t.faq.title}
                 </Link>
               </li>
               <li>
@@ -126,17 +155,10 @@ export function Footer() {
         <div className="border-t border-slate-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-slate-300 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} ChooseStockBroker. All rights reserved.
+              © {new Date().getFullYear()} ChooseStockBroker. {t.footer.allRightsReserved}
             </div>
-            <div className="text-slate-400 text-xs">
-              <p className="mb-1">
-                <strong>Risk Warning:</strong> Trading involves substantial risk of loss and is not
-                suitable for all investors.
-              </p>
-              <p>
-                The value of investments may go down as well as up. Past performance is not
-                indicative of future results.
-              </p>
+            <div className="text-slate-400 text-xs max-w-3xl">
+              <p>{t.footer.riskWarning}</p>
             </div>
           </div>
         </div>

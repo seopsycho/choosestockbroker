@@ -1,25 +1,20 @@
-import Image from 'next/image'
+import { getTranslations } from '../lib/language'
 
-export function Hero() {
+export function Hero({ locale, country: _country }: { locale: string; country: string }) {
+  const t = getTranslations(locale)
   return (
     <section className="bg-gradient-to-br from-slate-50 to-slate-100 py-16">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex-1 max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-              Compare Online Trading Brokers in 2025
-            </h1>
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Below You Can Find the Top Regulated Trading Brokers to Trade Financial Assets. No
-              Commissions, Quick Withdrawals. Get Free Access to Thousands of Trading Assets with
-              the Top Online Trading Platforms/Apps.
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">{t.hero.title}</h1>
+            <p className="text-lg text-slate-600 mb-8 leading-relaxed">{t.hero.subtitle}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                View Top Brokers
+                {t.hero.viewTopBrokers}
               </button>
               <button className="border border-slate-300 hover:border-slate-400 text-slate-700 px-8 py-3 rounded-lg font-semibold transition-colors">
-                Learn More
+                {t.hero.learnMore}
               </button>
             </div>
           </div>

@@ -2,8 +2,9 @@
 
 import { getFaqs } from '@/actions/getFaqs'
 import { useState, useEffect } from 'react'
+import { getTranslations } from '../lib/language'
 
-interface FAQ {
+interface FAQItem {
   id: string
   question: string
   answer: string
@@ -11,11 +12,13 @@ interface FAQ {
   languages?: Array<{ language: string }>
 }
 
-export function FAQ() {
-  const [faqs, setFaqs] = useState<FAQ[]>([])
+export function FAQ({ locale, country: _country }: { locale: string; country: string }) {
+  const [faqs, setFaqs] = useState<FAQItem[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [openItems, setOpenItems] = useState<string[]>([])
+
+  const t = getTranslations(locale)
 
   useEffect(() => {
     const fetchFAQs = async () => {
@@ -33,11 +36,11 @@ export function FAQ() {
           )
           setFaqs(mappedFaqs)
         } else {
-          setError('Failed to load FAQs')
+          setError(t.faq.error)
         }
       } catch (err) {
         console.error('Error fetching FAQs:', err)
-        setError('Failed to load FAQs')
+        setError(t.faq.error)
         // Fallback to mock data
         setFaqs([
           {
@@ -59,6 +62,7 @@ export function FAQ() {
     }
 
     fetchFAQs()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const toggleItem = (id: string) => {
@@ -72,16 +76,16 @@ export function FAQ() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-800 text-center mb-12">
-            Frequently Asked Questions
+            {t.faq.title}
           </h2>
 
           {loading ? (
             <div className="text-center py-8">
-              <div className="text-slate-600">Loading FAQs...</div>
+              <div className="text-slate-600">{t.faq.loading}</div>
             </div>
           ) : error ? (
             <div className="text-center py-8">
-              <div className="text-red-600">Error loading FAQs. Please try again later.</div>
+              <div className="text-red-600">{t.faq.error}</div>
             </div>
           ) : (
             <div className="space-y-4">
@@ -125,9 +129,9 @@ export function FAQ() {
           )}
 
           <div className="mt-12 text-center">
-            <p className="text-slate-600 mb-4">Still have questions? We&#39;re here to help.</p>
+            <p className="text-slate-600 mb-4">{t.faq.helpText}</p>
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              Contact Support
+              {t.faq.contactSupport}
             </button>
           </div>
         </div>

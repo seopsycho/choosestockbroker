@@ -4,6 +4,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 import { getBrokers } from '@/actions/getBrokers'
 import Image from 'next/image'
 import { Media } from '@/payload-types'
+import { getTranslations } from '../lib/language'
 
 interface Broker {
   id: string
@@ -22,12 +23,14 @@ interface Broker {
 type SortField = 'deposit' | 'assets' | null
 type SortDirection = 'asc' | 'desc'
 
-export function BrokerTable() {
+export function BrokerTable({ locale, country: _country }: { locale: string; country: string }) {
   const [brokers, setBrokers] = useState<Broker[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [sortField, setSortField] = useState<SortField>(null)
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc')
+
+  const t = getTranslations(locale)
 
   useEffect(() => {
     let cancelled = false
@@ -36,28 +39,32 @@ export function BrokerTable() {
         setLoading(true)
         const data = await getBrokers()
         if (!cancelled && data && Array.isArray(data.docs)) {
-          const mappedBrokers = data.docs.map((broker: Partial<import('@/payload-types').Broker>) => ({
-            id: broker.id as string,
-            name: broker.name as string,
-            logo:
-              broker.logo && typeof broker.logo === 'object'
-                ? (broker.logo as unknown as Media)
-                : undefined,
-            rating: typeof broker.rating === 'number' ? broker.rating : 0,
-            minDeposit: typeof broker.minDeposit === 'number' ? broker.minDeposit : 0,
-            assets: 0, // Default, since not present in Payload type
-            highlights: Array.isArray(broker.highlights)
-              ? broker.highlights.map((h: { highlight?: string }) => ({
-                  highlight: h.highlight ?? '',
-                }))
-              : [],
-            paymentMethods: Array.isArray(broker.paymentMethods)
-              ? broker.paymentMethods.map((m: { method?: string }) => ({ method: m.method ?? '' }))
-              : [],
-            visitUrl: '', // Default, since not present in Payload type
-            riskWarning: '', // Default, since not present in Payload type
-            address: '', // Default, since not present in Payload type
-          }))
+          const mappedBrokers = data.docs.map(
+            (broker: Partial<import('@/payload-types').Broker>) => ({
+              id: broker.id as string,
+              name: broker.name as string,
+              logo:
+                broker.logo && typeof broker.logo === 'object'
+                  ? (broker.logo as unknown as Media)
+                  : undefined,
+              rating: typeof broker.rating === 'number' ? broker.rating : 0,
+              minDeposit: typeof broker.minDeposit === 'number' ? broker.minDeposit : 0,
+              assets: 0, // Default, since not present in Payload type
+              highlights: Array.isArray(broker.highlights)
+                ? broker.highlights.map((h: { highlight?: string }) => ({
+                    highlight: h.highlight ?? '',
+                  }))
+                : [],
+              paymentMethods: Array.isArray(broker.paymentMethods)
+                ? broker.paymentMethods.map((m: { method?: string }) => ({
+                    method: m.method ?? '',
+                  }))
+                : [],
+              visitUrl: '', // Default, since not present in Payload type
+              riskWarning: '', // Default, since not present in Payload type
+              address: '', // Default, since not present in Payload type
+            }),
+          )
           setBrokers(mappedBrokers)
         } else if (!cancelled) {
           setError('Failed to load brokers')
@@ -144,7 +151,7 @@ export function BrokerTable() {
                   <tr className="bg-slate-50 border-b border-slate-200">
                     <th className="text-left py-4 px-6 font-semibold text-slate-700">
                       <button onClick={resetSort} className="flex items-center hover:text-blue-600">
-                        Broker
+                        {t.brokers.tableHeaders.broker}
                         <span className="ml-1 text-sm">↺</span>
                       </button>
                     </th>
@@ -153,7 +160,7 @@ export function BrokerTable() {
                         onClick={() => handleSort('deposit')}
                         className="flex items-center hover:text-blue-600"
                       >
-                        Deposit
+                        {t.brokers.tableHeaders.deposit}
                         <SortIcon field="deposit" />
                       </button>
                     </th>
@@ -162,15 +169,19 @@ export function BrokerTable() {
                         onClick={() => handleSort('assets')}
                         className="flex items-center hover:text-blue-600"
                       >
-                        Assets
+                        {t.brokers.tableHeaders.assets}
                         <SortIcon field="assets" />
                       </button>
                     </th>
-                    <th className="text-left py-4 px-6 font-semibold text-slate-700">Highlights</th>
                     <th className="text-left py-4 px-6 font-semibold text-slate-700">
-                      Payment Methods
+                      {t.brokers.tableHeaders.highlights}
                     </th>
-                    <th className="text-left py-4 px-6 font-semibold text-slate-700">Learn More</th>
+                    <th className="text-left py-4 px-6 font-semibold text-slate-700">
+                      {t.brokers.tableHeaders.paymentMethods}
+                    </th>
+                    <th className="text-left py-4 px-6 font-semibold text-slate-700">
+                      {t.brokers.tableHeaders.learnMore}
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -249,7 +260,7 @@ export function BrokerTable() {
                       </td>
                       <td className="py-6 px-6">
                         <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors mb-2">
-                          Visit Site
+                          {t.brokers.visitSite}
                         </button>
                         <div className="text-xs text-slate-500">{broker.riskWarning}</div>
                       </td>
@@ -285,17 +296,20 @@ export function BrokerTable() {
                     </div>
                     <div className="text-right">
                       <div className="text-sm text-slate-600">
-                        Deposit: <span className="font-semibold">${broker.minDeposit}</span>
+                        {t.brokers.tableHeaders.deposit}:{' '}
+                        <span className="font-semibold">${broker.minDeposit}</span>
                       </div>
                       <div className="text-sm text-slate-600">
-                        Assets:{' '}
+                        {t.brokers.tableHeaders.assets}:{' '}
                         <span className="font-semibold">{broker.assets.toLocaleString()}+</span>
                       </div>
                     </div>
                   </div>
 
                   <div className="mb-4">
-                    <h4 className="font-semibold text-slate-800 mb-2">Highlights</h4>
+                    <h4 className="font-semibold text-slate-800 mb-2">
+                      {t.brokers.tableHeaders.highlights}
+                    </h4>
                     <ul className="space-y-1 text-sm text-slate-600">
                       {broker.highlights.slice(0, 3).map((highlight, idx) => (
                         <li key={idx}>• {highlight.highlight}</li>
@@ -304,7 +318,9 @@ export function BrokerTable() {
                   </div>
 
                   <div className="mb-4">
-                    <h4 className="font-semibold text-slate-800 mb-2">Payment Methods</h4>
+                    <h4 className="font-semibold text-slate-800 mb-2">
+                      {t.brokers.tableHeaders.paymentMethods}
+                    </h4>
                     <div className="flex flex-wrap gap-1">
                       {broker.paymentMethods.map((method, idx) => (
                         <span
@@ -318,7 +334,7 @@ export function BrokerTable() {
                   </div>
 
                   <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors mb-2">
-                    Visit Site
+                    {t.brokers.visitSite}
                   </button>
                   <div className="text-xs text-slate-500 text-center">{broker.riskWarning}</div>
                 </div>

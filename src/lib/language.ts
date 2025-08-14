@@ -37,6 +37,12 @@ export const TRANSLATIONS = {
       visitSite: 'Visit Site',
       minDeposit: 'Minimum Deposit',
       totalAssets: 'Total Assets',
+      status: {
+        loading: 'Loading brokers...',
+        error: 'Failed to load brokers.',
+        empty: 'No brokers available right now.',
+        retry: 'Retry',
+      },
     },
     faq: {
       title: 'Frequently Asked Questions',
@@ -115,6 +121,12 @@ export const TRANSLATIONS = {
       visitSite: 'Truy cập trang',
       minDeposit: 'Tiền gửi tối thiểu',
       totalAssets: 'Tổng tài sản',
+      status: {
+        loading: 'Đang tải danh sách nhà môi giới...',
+        error: 'Không thể tải nhà môi giới.',
+        empty: 'Hiện chưa có nhà môi giới.',
+        retry: 'Thử lại',
+      },
     },
     faq: {
       title: 'Câu Hỏi Thường Gặp',
@@ -193,6 +205,12 @@ export const TRANSLATIONS = {
       visitSite: 'เยี่ยมชมเว็บไซต์',
       minDeposit: 'เงินฝากขั้นต่ำ',
       totalAssets: 'สินทรัพย์ทั้งหมด',
+      status: {
+        loading: 'กำลังโหลดรายชื่อนายหน้า...',
+        error: 'โหลดนายหน้าไม่สำเร็จ.',
+        empty: 'ยังไม่มีนายหน้าให้แสดง.',
+        retry: 'ลองอีกครั้ง',
+      },
     },
     faq: {
       title: 'คำถามที่พบบ่อย',
@@ -271,6 +289,12 @@ export const TRANSLATIONS = {
       visitSite: 'زيارة الموقع',
       minDeposit: 'الحد الأدنى للإيداع',
       totalAssets: 'إجمالي الأصول',
+      status: {
+        loading: 'جارٍ تحميل الوسطاء...',
+        error: 'فشل في تحميل الوسطاء.',
+        empty: 'لا يوجد وسطاء متاحون الآن.',
+        retry: 'إعادة المحاولة',
+      },
     },
     faq: {
       title: 'الأسئلة الشائعة',
@@ -349,6 +373,12 @@ export const TRANSLATIONS = {
       visitSite: 'サイトを訪問',
       minDeposit: '最低入金額',
       totalAssets: '総資産',
+      status: {
+        loading: 'ブローカーを読み込み中...',
+        error: 'ブローカーの読み込みに失敗しました。',
+        empty: '現在表示できるブローカーはありません。',
+        retry: '再試行',
+      },
     },
     faq: {
       title: 'よくある質問',
@@ -427,6 +457,12 @@ export const TRANSLATIONS = {
       visitSite: '사이트 방문',
       minDeposit: '최소 입금액',
       totalAssets: '총 자산',
+      status: {
+        loading: '브로커 불러오는 중...',
+        error: '브로커를 불러오지 못했습니다.',
+        empty: '현재 표시할 브로커가 없습니다.',
+        retry: '다시 시도',
+      },
     },
     faq: {
       title: '자주 묻는 질문',
@@ -504,6 +540,12 @@ export const TRANSLATIONS = {
       visitSite: '访问网站',
       minDeposit: '最低存款',
       totalAssets: '总资产',
+      status: {
+        loading: '正在加载经纪商...',
+        error: '加载经纪商失败。',
+        empty: '目前没有可用的经纪商。',
+        retry: '重试',
+      },
     },
     faq: {
       title: '常见问题',
@@ -582,6 +624,12 @@ export const TRANSLATIONS = {
       visitSite: 'साइट पर जाएँ',
       minDeposit: 'न्यूनतम जमा',
       totalAssets: 'कुल परिसंपत्तियाँ',
+      status: {
+        loading: 'ब्रोकर लोड हो रहे हैं...',
+        error: 'ब्रोकर लोड करने में विफल।',
+        empty: 'अभी कोई ब्रोकर उपलब्ध नहीं हैं।',
+        retry: 'पुनः प्रयास करें',
+      },
     },
     faq: {
       title: 'सामान्य प्रश्न',
@@ -602,7 +650,7 @@ export const TRANSLATIONS = {
       description:
         'ChooseStockBroker.com एक स्वतंत्र तुलना मंच और सूचना सेवा है जिसका उद्देश्य आपको बेहतर निर्णय लेने के लिए आवश्यक उपकरण प्रदान करना है। हालांकि हम स्वतंत्र हैं, इस साइट पर प्रदर्शित ऑफ़र उन कंपनियों से आते हैं जिनसे ChooseStockBroker.com को पारिश्रमिक प्राप्त होता है।',
       riskWarning:
-        'शेयरों, लीवरेज्ड OTC डेरिवेटिव्स और अन्य विनिमय योग्य प्रतिभूतियों में ट्रेडिंग और निवेश आपके पूंजी को जोखिम में डाल सकती है और इसे एक उच्च जोखिम वाला व्यवसाय माना जाता है जो कई परिवर्तनीय कारकों जैसे आर्थिक जोखिम, मुद्रास्फीति, बाजार मूल्य में परिवर्तन पर निर्भर करता है। लीवरेज्ड OTC डेरिवेटिव्स जटिल उपकरण हैं और लीवरेज के कारण तेजी से धन खोने का उच्च जोखिम होता है। लीवरेज्ड OTC डेरिवेटिव्स का व्यापार करते समय 74-89% खुदरा निवेशक खातों को नुकसान होता है। आपको विचार करना चाहिए कि क्या आप अपने पैसे खोने के अधिक जोखिम को वहन कर सकते हैं।',
+        'शेयरों, लीवरेज्ड OTC डेरिवेटिव्स और अन्य विनिमय योग्य प्रतिभूतियों में ट्रेडिंग और निवेश आपके पूंजी को जोखिम में डाल सकती है और इसे एक उच्च जोखिम वाला व्यवसाय माना जाता है जो कई परिवर्तनीय कारकों जैसे आर्थिक जोखिम, मुद्रास्फीति, बाजार मूल्य में परिवर्तन पर निर्भर करता है। लीवरेज्ड OTC डेरिवेटिव्स जटिल उपकरण हैं और लीवरेज के कारण तेजी से धन खोने का उच्च जोखिम होता है। लीवरेज्ड OTC डेरिवेटिव्स का व्यापार करते समय 74-89 प्रतिशत खुदरा निवेशक अकाउंट को नुकसान होता है। आपको विचार करना चाहिए कि क्या आप अपने पैसे खोने के अधिक जोखिम को वहन कर सकते हैं।',
       contactInfo: 'संपर्क जानकारी',
       allRightsReserved: 'सभी अधिकार सुरक्षित.',
       termsConditions: 'नियम और शर्तें',
@@ -660,6 +708,12 @@ export const TRANSLATIONS = {
       visitSite: 'Lawati Laman Web',
       minDeposit: 'Deposit Minimum',
       totalAssets: 'Jumlah Aset',
+      status: {
+        loading: 'Memuat broker...',
+        error: 'Gagal memuat broker.',
+        empty: 'Tiada broker tersedia buat masa ini.',
+        retry: 'Cuba lagi',
+      },
     },
     faq: {
       title: 'Soalan Lazim',
@@ -738,6 +792,12 @@ export const TRANSLATIONS = {
       visitSite: 'ویب سائٹ دیکھیں',
       minDeposit: 'کم سے کم ڈپازٹ',
       totalAssets: 'کل اثاثے',
+      status: {
+        loading: 'بروکرز لوڈ ہو رہے ہیں...',
+        error: 'بروکرز لوڈ نہیں ہو سکے۔',
+        empty: 'فی الحال کوئی بروکر دستیاب نہیں۔',
+        retry: 'دوبارہ کوشش کریں',
+      },
     },
     faq: {
       title: 'عمومی سوالات',
@@ -816,6 +876,12 @@ export const TRANSLATIONS = {
       visitSite: 'தளத்தை பார்வையிடுக',
       minDeposit: 'குறைந்த வைப்பு',
       totalAssets: 'மொத்த சொத்துகள்',
+      status: {
+        loading: 'புரோக்கர்கள் ஏற்றப்படுகிறது...',
+        error: 'புரோக்கர்களை ஏற்ற முடியவில்லை.',
+        empty: 'இப்போது எந்த புரோக்கர்களும் இல்லை.',
+        retry: 'மீண்டும் முயற்சி',
+      },
     },
     faq: {
       title: 'அடிக்கடி கேட்கப்படும் கேள்விகள்',
@@ -895,6 +961,12 @@ export const TRANSLATIONS = {
       visitSite: 'Visitar sitio',
       minDeposit: 'Depósito mínimo',
       totalAssets: 'Activos totales',
+      status: {
+        loading: 'Cargando corredores...',
+        error: 'Error al cargar corredores.',
+        empty: 'No hay corredores disponibles.',
+        retry: 'Reintentar',
+      },
     },
     faq: {
       title: 'Preguntas Frecuentes',
@@ -973,6 +1045,12 @@ export const TRANSLATIONS = {
       visitSite: 'Visitar site',
       minDeposit: 'Depósito mínimo',
       totalAssets: 'Ativos totais',
+      status: {
+        loading: 'Carregando corretores...',
+        error: 'Falha ao carregar corretores.',
+        empty: 'Nenhum corretor disponível agora.',
+        retry: 'Tentar novamente',
+      },
     },
     faq: {
       title: 'Perguntas Frequentes',
@@ -1051,6 +1129,12 @@ export const TRANSLATIONS = {
       visitSite: 'Kunjungi Situs',
       minDeposit: 'Deposit Minimum',
       totalAssets: 'Total Aset',
+      status: {
+        loading: 'Memuat broker...',
+        error: 'Gagal memuat broker.',
+        empty: 'Belum ada broker tersedia.',
+        retry: 'Coba lagi',
+      },
     },
     faq: {
       title: 'Pertanyaan Umum',
@@ -1062,7 +1146,7 @@ export const TRANSLATIONS = {
         regulatedBroker: 'Apakah lebih baik mendanai dengan broker terregulasi?',
         minimumAmount: 'Berapa jumlah minimum untuk memulai?',
       },
-      loading: 'Memuat Pertanyaan Umum...',
+      loading: 'Memuatkan Pertanyaan Umum...',
       error: 'Terjadi kesalahan saat memuat Pertanyaan Umum. Silakan coba lagi nanti.',
       helpText: 'Masih punya pertanyaan? Kami siap membantu.',
       contactSupport: 'Hubungi Dukungan',

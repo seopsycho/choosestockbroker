@@ -70,6 +70,17 @@ export function BrokerTable({
   return (
     <section id="brokers" className="py-12 bg-white">
       <div className="container mx-auto px-4">
+        {sortedBrokers.length === 0 && (
+          <div className="py-16 text-center border border-dashed border-slate-300 rounded-lg bg-slate-50 mb-8">
+            <p className="text-slate-600 mb-4">{t.brokers.status.empty}</p>
+            <button
+              onClick={resetSort}
+              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors text-sm"
+            >
+              {t.brokers.status.retry}
+            </button>
+          </div>
+        )}
         {/* Desktop Table */}
         <div className="hidden lg:block overflow-x-auto">
           <table className="w-full bg-white rounded-lg shadow-sm border border-slate-200">

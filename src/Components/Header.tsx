@@ -15,7 +15,7 @@ export function Header({ locale, country }: { locale: string; country: string })
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-slate-800">ChooseStockBroker</div>
+            <div className="text-2xl font-bold text-slate-800">1ChooseStockBroker</div>
           </div>
 
           {/* Desktop Navigation */}
@@ -26,12 +26,7 @@ export function Header({ locale, country }: { locale: string; country: string })
             >
               {t.navigation.home}
             </Link>
-            <Link
-              href={`/${locale}/${country}/brokers`}
-              className="text-slate-700 hover:text-blue-600 transition-colors"
-            >
-              {t.navigation.brokers}
-            </Link>
+
             <CountrySelector locale={locale} country={country} />
           </div>
 
@@ -72,12 +67,7 @@ export function Header({ locale, country }: { locale: string; country: string })
               >
                 {t.navigation.home}
               </Link>
-              <Link
-                href={`/${locale}/${country}/brokers`}
-                className="text-slate-700 hover:text-blue-600 transition-colors"
-              >
-                {t.navigation.brokers}
-              </Link>
+
               <div className="pt-2">
                 <CountrySelector locale={locale} country={country} />
               </div>

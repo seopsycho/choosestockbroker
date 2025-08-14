@@ -3,8 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
-import { getCounties } from '@/actions/getCounties'
-import { getTranslations } from '../lib/language'
+import { getTranslations, normalizeLocale } from '../lib/language'
 
 interface Country {
   id: string
@@ -45,6 +44,58 @@ const fallbackCountries = [
   },
 ]
 
+// Mapping between ISO country codes and URL slugs (bidirectional)
+const countryCodeToSlug: Record<string, string> = {
+  vn: 'vietnam',
+  us: 'united-states',
+  gb: 'united-kingdom',
+  de: 'germany',
+  fr: 'france',
+  es: 'spain',
+  it: 'italy',
+  pt: 'portugal',
+  ru: 'russia',
+  jp: 'japan',
+  kr: 'korea',
+  cn: 'china',
+  au: 'australia',
+  ca: 'canada',
+  co: 'colombia',
+  br: 'brazil',
+  mx: 'mexico',
+  ar: 'argentina',
+  cl: 'chile',
+  in: 'india',
+  th: 'thailand',
+  sg: 'singapore',
+  my: 'malaysia',
+  id: 'indonesia',
+  ph: 'philippines',
+  global: 'global',
+}
+
+const slugToCountryCode: Record<string, string> = Object.entries(countryCodeToSlug).reduce(
+  (acc, [code, slug]) => {
+    acc[slug] = code
+    return acc
+  },
+  {} as Record<string, string>,
+)
+
+const resolveCountryCode = (value?: string): string | undefined => {
+  if (!value) return undefined
+  const v = value.toLowerCase()
+  return slugToCountryCode[v] || v
+}
+
+// Create a URL-safe slug from a country name
+const toSlug = (str?: string) =>
+  (str || '')
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+
 export function CountrySelector({
   locale: initialLocale,
   country: initialCountryCode,
@@ -53,14 +104,23 @@ export function CountrySelector({
   country?: string
 }) {
   // Derive initial selections from props and fallback
+  const resolvedInitialCountryCode = resolveCountryCode(initialCountryCode)
   const initialCountryObj =
-    (initialCountryCode && fallbackCountries.find((c) => c.code === initialCountryCode)) ||
+    (resolvedInitialCountryCode &&
+      fallbackCountries.find((c) => c.code.toLowerCase() === resolvedInitialCountryCode)) ||
     fallbackCountries[0]
+  const normalizedInitialLocale = normalizeLocale(initialLocale || 'en')
   const initialLanguageObj =
-    (initialLocale && initialCountryObj.languages.find((l) => l.code === initialLocale)) ||
+    initialCountryObj.languages.find((l) => normalizeLocale(l.code) === normalizedInitialLocale) ||
     initialCountryObj.languages[0]
 
-  const t = getTranslations(initialLocale || 'en')
+  const t = getTranslations(normalizedInitialLocale)
+
+  // Preferred way to compute the country slug for routing based on full object
+  const getCountrySlug = (country: Country): string => {
+    const code = (country?.code || '').toLowerCase()
+    return countryCodeToSlug[code] || toSlug(country?.name) || code
+  }
 
   // Resolve localized country name by ISO code where possible, otherwise fallback to provided name
   const localizedCountryName = (code: string, fallbackName: string) => {
@@ -97,10 +157,12 @@ export function CountrySelector({
     const fetchCountries = async () => {
       try {
         setLoading(true)
-        const data = await getCounties()
+        const res = await fetch('/api/countries', { cache: 'no-store' })
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        const data = await res.json()
         if (data && Array.isArray(data.docs) && data.docs.length > 0) {
           // Map Payload country objects to local Country type
-          const mappedCountries = data.docs.map((country: import('@/payload-types').Country) => ({
+          const mappedCountries: Country[] = data.docs.map((country: import('@/payload-types').Country) => ({
             id: country.id,
             name: country.name,
             code: country.code,
@@ -112,13 +174,33 @@ export function CountrySelector({
                 }))
               : [{ language: 'English', code: 'en' }],
           }))
+          // Stable sort by localized name to improve UX
+          mappedCountries.sort((a: Country, b: Country) => {
+            const an = (a.name || '').toString()
+            const bn = (b.name || '').toString()
+            return an.localeCompare(bn)
+          })
           setCountries(mappedCountries)
           // Choose defaults based on props if provided
-          const defaultCountry =
-            (initialCountryCode && mappedCountries.find((c) => c.code === initialCountryCode)) ||
-            mappedCountries[0]
-          const defaultLanguage = (initialLocale &&
-            defaultCountry.languages.find((l) => l.code === initialLocale)) ||
+          const routeSlug = (initialCountryCode || '').toLowerCase()
+          // First try to match by reverse lookup of code mapping from slug
+          const resolvedCode = resolveCountryCode(routeSlug)
+          let defaultCountry: Country | undefined =
+            (resolvedCode &&
+              mappedCountries.find((c) => (c.code || '').toLowerCase() === resolvedCode)) ||
+            undefined
+          // If not found, match by slugified name
+          if (!defaultCountry) {
+            defaultCountry = mappedCountries.find((c: Country) => getCountrySlug(c) === routeSlug)
+          }
+          // Prefer a sensible fallback (global) if present
+          if (!defaultCountry) {
+            defaultCountry = mappedCountries.find((c: Country) => getCountrySlug(c) === 'global')
+          }
+          if (!defaultCountry) defaultCountry = mappedCountries[0]
+          const normalizedLocale = normalizeLocale(initialLocale || 'en')
+          const defaultLanguage =
+            defaultCountry.languages.find((l: { language: string; code: string }) => normalizeLocale(l.code) === normalizedLocale) ||
             defaultCountry.languages[0] || { language: 'English', code: 'en' }
 
           setSelectedCountry(defaultCountry)
@@ -142,8 +224,10 @@ export function CountrySelector({
     setSelectedLanguage(language)
     setIsOpen(false)
 
-    // Navigate to the localized URL: /[language]/[country]
-    const newPath = `/${language.code}/${country.code}`
+    // Navigate to the localized URL with full country name: /[language]/[country-name]
+    const countryUrlName = getCountrySlug(country)
+    const localeNormalized = normalizeLocale(language.code)
+    const newPath = `/${localeNormalized}/${countryUrlName}`
     router.push(newPath)
   }
 

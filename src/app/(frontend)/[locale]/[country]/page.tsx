@@ -8,14 +8,14 @@ import { ExitIntentPopup } from '@/Components/ExitIntentPopup'
 import { getBrokers } from '@/actions/getBrokers'
 
 interface PageProps {
-  params: Promise<{
+  params: {
     locale: string
     country: string
-  }>
+  }
 }
 
 export default async function LocalizedPage({ params }: PageProps) {
-  const { locale, country } = await params
+  const { locale, country } = params
   const data = await getBrokers()
   const brokers = Array.isArray(data?.docs)
     ? data.docs.map((broker: Partial<PayloadBroker>) => ({
@@ -51,17 +51,24 @@ export default async function LocalizedPage({ params }: PageProps) {
   )
 }
 
+// Allow any country slug at runtime; we render dynamically if not in static params
+export const dynamicParams = true
+
 // Generate static paths for supported locale/country combinations
 export async function generateStaticParams() {
-  const locales = ['en', 'vi', 'de', 'fr']
-  const countries = ['vn', 'us', 'gb', 'de', 'fr', 'au']
-
-  const combinations = []
+  const locales = ['en', 'vi', 'th', 'ar', 'ja', 'ko', 'zh', 'hi', 'ms', 'ur', 'ta', 'es', 'pt', 'id']
+  // Fallback baseline countries for pre-rendering
+  const fallbackCountries = [
+    'vietnam', 'united-states', 'united-kingdom', 'germany', 'france', 'australia',
+    'spain', 'italy', 'portugal', 'russia', 'japan', 'korea', 'china', 'colombia',
+    'canada', 'brazil', 'mexico', 'argentina', 'chile', 'india', 'thailand',
+    'singapore', 'malaysia', 'indonesia', 'philippines', 'global',
+  ]
+  const combinations: Array<{ locale: string; country: string }> = []
   for (const locale of locales) {
-    for (const country of countries) {
+    for (const country of fallbackCountries) {
       combinations.push({ locale, country })
     }
   }
-
   return combinations
 }

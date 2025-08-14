@@ -1,19 +1,41 @@
-import { getTranslations } from '../lib/language'
+import { getTranslations, normalizeLocale } from '../lib/language'
 
 export function Hero({ locale, country }: { locale: string; country: string }) {
-  const t = getTranslations(locale)
+  const lang = normalizeLocale(locale)
+  const t = getTranslations(lang)
   const currentYear = new Date().getFullYear()
   
   // Helper function to get localized country name
   const getCountryName = (country: string) => {
-    if (country.toLowerCase() === 'global') {
+    const raw = (country || '').toLowerCase()
+    if (raw === 'global') {
       return null // Special case for global
     }
     
-    // Map country codes to translation keys
-    const countryMap: Record<string, keyof typeof t.countries> = {
+    // Map ISO country codes to route slugs (best effort)
+    const codeToSlug: Record<string, string> = {
+      vn: 'vietnam',
+      us: 'united-states',
+      gb: 'united-kingdom',
+      de: 'germany',
+      fr: 'france',
+      es: 'spain',
+      it: 'italy',
+      pt: 'portugal',
+      ru: 'russia',
+      jp: 'japan',
+      kr: 'korea',
+      cn: 'china',
+      au: 'australia',
+      ca: 'canada',
+      co: 'colombia',
+    }
+
+    // Map known slugs to translation keys (subset supported in translations)
+    const slugToKey: Record<string, keyof typeof t.countries | 'global'> = {
+      'global': 'global',
       'vietnam': 'vietnam',
-      'united-kingdom': 'unitedKingdom', 
+      'united-kingdom': 'unitedKingdom',
       'united-states': 'unitedStates',
       'germany': 'germany',
       'france': 'france',
@@ -24,16 +46,29 @@ export function Hero({ locale, country }: { locale: string; country: string }) {
       'japan': 'japan',
       'korea': 'korea',
       'china': 'china',
+      'australia': 'australia',
+      'canada': 'canada',
+      'brazil': 'brazil',
+      'mexico': 'mexico',
+      'argentina': 'argentina',
+      'chile': 'chile',
+      'india': 'india',
+      'thailand': 'thailand',
+      'singapore': 'singapore',
+      'malaysia': 'malaysia',
+      'indonesia': 'indonesia',
+      'philippines': 'philippines',
     }
-    
-    const countryKey = countryMap[country.toLowerCase()]
-    if (countryKey && t.countries[countryKey]) {
-      // Use the full country name (including both native and English)
-      return t.countries[countryKey] as string
-    }
-    
-    // Fallback to capitalized country name
-    return country.charAt(0).toUpperCase() + country.slice(1)
+
+    // Resolve a candidate slug first
+    const candidateSlug = /^[a-z]{2}$/i.test(raw) ? (codeToSlug[raw] || raw) : raw
+    // Try to localize via translations if we know the key
+    const key = slugToKey[candidateSlug] as keyof typeof t.countries | undefined
+    if (key && t.countries[key]) return t.countries[key] as string
+
+    // Humanize fallback: replace dashes and title-case
+    const human = candidateSlug.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase())
+    return human
   }
   
   const countryName = getCountryName(country)
@@ -63,11 +98,11 @@ export function Hero({ locale, country }: { locale: string; country: string }) {
     }
     
     // For specific countries, use localized format
-    if (locale === 'en') {
+    if (lang === 'en') {
       return `Compare Online Trading Brokers in ${countryName} - ${currentYear}`
     }
     
-    switch (locale) {
+    switch (lang) {
       case 'vi': return `So Sánh Các Nhà Môi Giới Giao Dịch Trực Tuyến tại ${countryName} - ${currentYear}`
       case 'th': return `เปรียบเทียบนายหน้าซื้อขายออนไลน์ใน${countryName} - ${currentYear}`
       case 'ar': return `قارن وسطاء التداول عبر الإنترنت في ${countryName} - ${currentYear}`

@@ -15,9 +15,9 @@ export default async function LocalizedLayout({
   params,
 }: {
   children: ReactNode
-  params: Promise<{ locale: string; country: string }>
+  params: { locale: string; country: string }
 }) {
-  const { locale, country } = await params
+  const { locale, country } = params
   return (
     <div data-locale={locale} data-country={country}>
       {children}
@@ -28,9 +28,9 @@ export default async function LocalizedLayout({
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: string; country: string }>
+  params: { locale: string; country: string }
 }): Promise<Metadata> {
-  const { locale, country } = await params
+  const { locale, country } = params
   const lang = normalizeLocale(locale)
   const t: Translations = getTranslations(lang)
 

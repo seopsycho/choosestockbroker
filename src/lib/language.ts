@@ -59,6 +59,22 @@ export const TRANSLATIONS = {
       helpText: "Still have questions? We're here to help.",
       contactSupport: 'Contact Support',
     },
+    exitIntent: {
+      title: 'Before You Leave!',
+      subtitle: "Don't miss this exclusive opportunity",
+      offerBadge: '🎯 Exclusive Broker Offer',
+      offerTitle: 'Special Trading Account Bonus',
+      offerDescription: 'Get started with our top-rated broker partner and receive:',
+      benefits: {
+        welcomeBonus: '$100 Welcome Bonus',
+        zeroCommission: 'Zero Commission Trading',
+        freeSignals: 'Free Trading Signals',
+        support247: '24/7 Customer Support',
+      },
+      claimButton: 'Claim Exclusive Offer',
+      dismissButton: 'No thanks, continue browsing',
+      disclaimer: '*Terms and conditions apply. Risk warning: Trading involves risk.',
+    },
     footer: {
       description:
         'ChooseStockBroker.com is an independent comparison platform and information service aiming to provide the tools you need to make better decisions. While we are independent, the offers that appear on this site are from companies from which ChooseStockBroker.com receives compensation.',
@@ -142,6 +158,22 @@ export const TRANSLATIONS = {
       error: 'Lỗi tải Câu hỏi thường gặp. Vui lòng thử lại sau.',
       helpText: 'Vẫn còn thắc mắc? Chúng tôi luôn sẵn sàng hỗ trợ.',
       contactSupport: 'Liên hệ Hỗ trợ',
+    },
+    exitIntent: {
+      title: 'Trước khi bạn rời đi!',
+      subtitle: 'Đừng bỏ lỡ cơ hội độc quyền này',
+      offerBadge: '🎯 Ưu Đãi Môi Giới Độc Quyền',
+      offerTitle: 'Phần Thưởng Tài Khoản Giao Dịch Đặc Biệt',
+      offerDescription: 'Bắt đầu với đối tác môi giới hàng đầu của chúng tôi và nhận được:',
+      benefits: {
+        welcomeBonus: 'Thưởng Chào Mừng $100',
+        zeroCommission: 'Giao Dịch Không Phí',
+        freeSignals: 'Tín Hiệu Giao Dịch Miễn Phí',
+        support247: 'Hỗ Trợ Khách Hàng 24/7',
+      },
+      claimButton: 'Nhận Ưu Đãi Độc Quyền',
+      dismissButton: 'Không, cảm ơn, tiếp tục duyệt web',
+      disclaimer: '*Áp dụng điều khoản và điều kiện. Cảnh báo rủi ro: Giao dịch có rủi ro.',
     },
     footer: {
       description:
@@ -227,6 +259,22 @@ export const TRANSLATIONS = {
       helpText: 'ยังมีคำถามอยู่ไหม? เราพร้อมช่วยเหลือคุณ',
       contactSupport: 'ติดต่อฝ่ายสนับสนุน',
     },
+    exitIntent: {
+      title: 'ก่อนที่คุณจะออกไป!',
+      subtitle: 'อย่าพลาดโอกาสพิเศษนี้',
+      offerBadge: '🎯 ข้อเสนอโบรกเกอร์พิเศษ',
+      offerTitle: 'โบนัสบัญชีเทรดพิเศษ',
+      offerDescription: 'เริ่มต้นกับพาร์ทเนอร์โบรกเกอร์ชั้นนำของเราและรับ:',
+      benefits: {
+        welcomeBonus: 'โบนัสต้อนรับ $100',
+        zeroCommission: 'การเทรดแบบไม่มีค่าคอมมิชชั่น',
+        freeSignals: 'สัญญาณเทรดฟรี',
+        support247: 'การสนับสนุนลูกค้า 24/7',
+      },
+      claimButton: 'รับข้อเสนอพิเศษ',
+      dismissButton: 'ไม่เป็นไร ขอบคุณ ดูเว็บต่อ',
+      disclaimer: '*ข้อกำหนดและเงื่อนไขมีผลบังคับใช้ คำเตือนความเสี่ยง: การเทรดมีความเสี่ยง',
+    },
     footer: {
       description:
         'ChooseStockBroker.com เป็นแพลตฟอร์มเปรียบเทียบและบริการข้อมูลอิสระที่มุ่งให้เครื่องมือที่คุณต้องการในการตัดสินใจที่ดีขึ้น แม้ว่าเราจะเป็นอิสระ ข้อเสนอที่ปรากฏในเว็บไซต์นี้มาจากบริษัทที่ ChooseStockBroker.com ได้รับค่าตอบแทน.',
@@ -310,6 +358,22 @@ export const TRANSLATIONS = {
       error: 'حدث خطأ أثناء تحميل الأسئلة الشائعة. يرجى المحاولة مرة أخرى لاحقًا.',
       helpText: 'ما زالت لديك أسئلة؟ نحن هنا للمساعدة.',
       contactSupport: 'تواصل مع الدعم',
+    },
+    exitIntent: {
+      title: 'قبل أن تغادر!',
+      subtitle: 'لا تفوت هذه الفرصة الحصرية',
+      offerBadge: '🎯 عرض وسيط حصري',
+      offerTitle: 'مكافأة حساب التداول الخاصة',
+      offerDescription: 'ابدأ مع شريك الوسيط الأعلى تقييماً لدينا واحصل على:',
+      benefits: {
+        welcomeBonus: 'مكافأة ترحيب $100',
+        zeroCommission: 'تداول بدون عمولة',
+        freeSignals: 'إشارات تداول مجانية',
+        support247: 'دعم العملاء 24/7',
+      },
+      claimButton: 'احصل على العرض الحصري',
+      dismissButton: 'لا شكراً، متابعة التصفح',
+      disclaimer: '*تطبق الشروط والأحكام. تحذير من المخاطر: التداول ينطوي على مخاطر.',
     },
     footer: {
       description:
@@ -395,6 +459,22 @@ export const TRANSLATIONS = {
       helpText: 'まだご不明な点がありますか？私たちがお手伝いします。',
       contactSupport: 'サポートに連絡',
     },
+    exitIntent: {
+      title: '離れる前に！',
+      subtitle: 'この限定機会をお見逃しなく',
+      offerBadge: '🎯 限定ブローカーオファー',
+      offerTitle: '特別取引口座ボーナス',
+      offerDescription: 'トップレート のブローカーパートナーで始めて、以下を受け取ってください：',
+      benefits: {
+        welcomeBonus: 'ウェルカムボーナス $100',
+        zeroCommission: '手数料なし取引',
+        freeSignals: '無料取引シグナル',
+        support247: '24/7カスタマーサポート',
+      },
+      claimButton: '限定オファーを申請',
+      dismissButton: 'いいえ、閲覧を続けます',
+      disclaimer: '*利用規約が適用されます。リスク警告：取引にはリスクが伴います。',
+    },
     footer: {
       description:
         'ChooseStockBroker.comは独立した比較プラットフォームおよび情報サービスであり、より良い判断を下すために必要なツールを提供することを目的としています。私たちは独立していますが、このサイトに表示されているオファーはChooseStockBroker.comが報酬を受け取っている企業からのものです。',
@@ -479,6 +559,22 @@ export const TRANSLATIONS = {
       helpText: '아직 질문이 있으신가요? 저희가 도와드리겠습니다.',
       contactSupport: '지원 문의',
     },
+    exitIntent: {
+      title: '떠나시기 전에!',
+      subtitle: '이 독점 기회를 놓치지 마세요',
+      offerBadge: '🎯 독점 브로커 오퍼',
+      offerTitle: '특별 거래 계좌 보너스',
+      offerDescription: '저희의 최고 평점 브로커 파트너로 시작하여 다음을 받으세요:',
+      benefits: {
+        welcomeBonus: '웰컴 보너스 $100',
+        zeroCommission: '수수료 무료 거래',
+        freeSignals: '무료 거래 신호',
+        support247: '24/7 고객 지원',
+      },
+      claimButton: '독점 오퍼 받기',
+      dismissButton: '아니요, 계속 둘러보기',
+      disclaimer: '*이용약관이 적용됩니다. 위험 경고: 거래에는 위험이 따릅니다.',
+    },
     footer: {
       description:
         'ChooseStockBroker.com은 더 나은 결정을 내릴 수 있도록 필요한 도구를 제공하는 것을 목표로 하는 독립적인 비교 플랫폼 및 정보 서비스입니다. 저희는 독립적이지만, 이 사이트에 표시되는 제안은 ChooseStockBroker.com이 보상을 받는 회사들로부터 제공됩니다.',
@@ -561,6 +657,22 @@ export const TRANSLATIONS = {
       error: '加载常见问题时出错。请稍后重试。',
       helpText: '还有疑问吗？我们随时为您提供帮助。',
       contactSupport: '联系支持',
+    },
+    exitIntent: {
+      title: '离开前等等！',
+      subtitle: '不要错过这个独家机会',
+      offerBadge: '🎯 独家经纪商优惠',
+      offerTitle: '特别交易账户奖金',
+      offerDescription: '与我们的顶级经纪商合作伙伴开始交易，获得：',
+      benefits: {
+        welcomeBonus: '欢迎奖金 $100',
+        zeroCommission: '零佣金交易',
+        freeSignals: '免费交易信号',
+        support247: '24/7 客户支持',
+      },
+      claimButton: '获取独家优惠',
+      dismissButton: '不了，谢谢，继续浏览',
+      disclaimer: '*条款和条件适用。风险警告：交易存在风险。',
     },
     footer: {
       description:
@@ -646,6 +758,22 @@ export const TRANSLATIONS = {
       helpText: 'अभी भी प्रश्न हैं? हम मदद के लिए यहाँ हैं।',
       contactSupport: 'सहायता से संपर्क करें',
     },
+    exitIntent: {
+      title: 'जाने से पहले!',
+      subtitle: 'इस विशेष अवसर को न चूकें',
+      offerBadge: '🎯 विशेष ब्रोकर ऑफर',
+      offerTitle: 'विशेष ट्रेडिंग खाता बोनस',
+      offerDescription: 'हमारे टॉप-रेटेड ब्रोकर पार्टनर के साथ शुरुआत करें और प्राप्त करें:',
+      benefits: {
+        welcomeBonus: 'वेलकम बोनस $100',
+        zeroCommission: 'जीरो कमीशन ट्रेडिंग',
+        freeSignals: 'मुफ्त ट्रेडिंग सिग्नल',
+        support247: '24/7 ग्राहक सहायता',
+      },
+      claimButton: 'विशेष ऑफर प्राप्त करें',
+      dismissButton: 'नहीं धन्यवाद, ब्राउज़िंग जारी रखें',
+      disclaimer: '*नियम और शर्तें लागू। जोखिम चेतावनी: ट्रेडिंग में जोखिम शामिल है।',
+    },
     footer: {
       description:
         'ChooseStockBroker.com एक स्वतंत्र तुलना मंच और सूचना सेवा है जिसका उद्देश्य आपको बेहतर निर्णय लेने के लिए आवश्यक उपकरण प्रदान करना है। हालांकि हम स्वतंत्र हैं, इस साइट पर प्रदर्शित ऑफ़र उन कंपनियों से आते हैं जिनसे ChooseStockBroker.com को पारिश्रमिक प्राप्त होता है।',
@@ -730,6 +858,22 @@ export const TRANSLATIONS = {
       helpText: 'Masih ada soalan? Kami sedia membantu.',
       contactSupport: 'Hubungi Sokongan',
     },
+    exitIntent: {
+      title: 'Sebelum Anda Pergi!',
+      subtitle: 'Jangan lepaskan peluang eksklusif ini',
+      offerBadge: '🎯 Tawaran Broker Eksklusif',
+      offerTitle: 'Bonus Akaun Perdagangan Istimewa',
+      offerDescription: 'Mulakan dengan rakan kongsi broker berkadar tertinggi kami dan terima:',
+      benefits: {
+        welcomeBonus: 'Bonus Selamat Datang $100',
+        zeroCommission: 'Perdagangan Tanpa Komisen',
+        freeSignals: 'Isyarat Perdagangan Percuma',
+        support247: 'Sokongan Pelanggan 24/7',
+      },
+      claimButton: 'Tuntut Tawaran Eksklusif',
+      dismissButton: 'Tidak terima kasih, teruskan melayar',
+      disclaimer: '*Terma dan syarat terpakai. Amaran risiko: Perdagangan melibatkan risiko.',
+    },
     footer: {
       description:
         'ChooseStockBroker.com ialah platform perbandingan dan perkhidmatan maklumat bebas yang bertujuan menyediakan anda dengan alat yang anda perlukan untuk membuat keputusan yang lebih baik. Walaupun kami bebas, tawaran yang muncul di laman ini berasal dari syarikat yang mana ChooseStockBroker.com menerima pampasan.',
@@ -813,6 +957,22 @@ export const TRANSLATIONS = {
       error: 'عمومی سوالات لوڈ کرنے میں خرابی ہوئی۔ براہ کرم بعد میں دوبارہ کوشش کریں۔',
       helpText: 'کیا ابھی بھی سوالات ہیں؟ ہم مدد کے لیے حاضر ہیں۔',
       contactSupport: 'سپورٹ سے رابطہ کریں',
+    },
+    exitIntent: {
+      title: 'جانے سے پہلے!',
+      subtitle: 'اس خصوصی موقع کو مت کھوئیں',
+      offerBadge: '🎯 خصوصی بروکر آفر',
+      offerTitle: 'خصوصی ٹریڈنگ اکاؤنٹ بونس',
+      offerDescription: 'ہمارے اعلیٰ درجہ بندی بروکر پارٹنر کے ساتھ شروع کریں اور حاصل کریں:',
+      benefits: {
+        welcomeBonus: 'خوش آمدید بونس $100',
+        zeroCommission: 'صفر کمیشن ٹریڈنگ',
+        freeSignals: 'مفت ٹریڈنگ سگنلز',
+        support247: '24/7 کسٹمر سپورٹ',
+      },
+      claimButton: 'خصوصی آفر حاصل کریں',
+      dismissButton: 'نہیں شکریہ، براؤزنگ جاری رکھیں',
+      disclaimer: '*شرائط و ضوابط لاگو ہیں۔ خطرے کی وارننگ: ٹریڈنگ میں خطرات شامل ہیں۔',
     },
     footer: {
       description:
@@ -899,6 +1059,22 @@ export const TRANSLATIONS = {
       helpText: 'இன்னும் கேள்விகள் உள்ளனவா? நாங்கள் உதவ தயாராக உள்ளோம்.',
       contactSupport: 'ஆதரவைக் தொடர்பு கொள்ளவும்',
     },
+    exitIntent: {
+      title: 'செல்வதற்கு முன்!',
+      subtitle: 'இந்த பிரத்யேக வாய்ப்பை தவற விடாதீர்கள்',
+      offerBadge: '🎯 பிரத்யேக புரோக்கர் சலுகை',
+      offerTitle: 'சிறப்பு வர்த்தக கணக்கு போனஸ்',
+      offerDescription: 'எங்கள் உயர் தர புரோக்கர் கூட்டாளருடன் தொடங்கி பெறுங்கள்:',
+      benefits: {
+        welcomeBonus: 'வரவேற்பு போனஸ் $100',
+        zeroCommission: 'பூஜ்ஜிய கமிஷன் வர்த்தகம்',
+        freeSignals: 'இலவச வர்த்தக சிக்னல்கள்',
+        support247: '24/7 வாடிக்கையாளர் ஆதரவு',
+      },
+      claimButton: 'பிரத்யேக சலுகையைப் பெறுங்கள்',
+      dismissButton: 'வேண்டாம் நன்றி, உலாவலைத் தொடருங்கள்',
+      disclaimer: '*விதிமுறைகள் மற்றும் நிபந்தனைகள் பொருந்தும். ஆபத்து எச்சரிக்கை: வர்த்தகத்தில் ஆபத்துகள் உள்ளன.',
+    },
     footer: {
       description:
         'ChooseStockBroker.com என்பது சுயாதீனமான ஒப்பீட்டு தளம் மற்றும் தகவல் சேவை. இது உங்களுக்கு சிறந்த முடிவுகளை எடுக்க தேவையான கருவிகளை வழங்குவதை நோக்கமாகக் கொண்டுள்ளது. நாங்கள் சுயாதீனமாக இருந்தாலும், இந்த தளத்தில் தோன்றும் சலுகைகள் ChooseStockBroker.com பரிசு பெறும் நிறுவனங்களிடமிருந்து வருகிறது.',
@@ -982,6 +1158,22 @@ export const TRANSLATIONS = {
       error: 'Error al cargar las preguntas frecuentes. Inténtalo de nuevo más tarde.',
       helpText: '¿Aún tienes preguntas? Estamos aquí para ayudarte.',
       contactSupport: 'Contactar soporte',
+    },
+    exitIntent: {
+      title: '¡Antes de que te vayas!',
+      subtitle: 'No te pierdas esta oportunidad exclusiva',
+      offerBadge: '🎯 Oferta Exclusiva de Broker',
+      offerTitle: 'Bono Especial de Cuenta de Trading',
+      offerDescription: 'Comienza con nuestro socio broker mejor valorado y recibe:',
+      benefits: {
+        welcomeBonus: 'Bono de Bienvenida $100',
+        zeroCommission: 'Trading Sin Comisiones',
+        freeSignals: 'Señales de Trading Gratuitas',
+        support247: 'Soporte al Cliente 24/7',
+      },
+      claimButton: 'Reclamar Oferta Exclusiva',
+      dismissButton: 'No gracias, continuar navegando',
+      disclaimer: '*Se aplican términos y condiciones. Advertencia de riesgo: El trading involucra riesgos.',
     },
     footer: {
       description:
@@ -1067,6 +1259,22 @@ export const TRANSLATIONS = {
       helpText: 'Ainda tem dúvidas? Estamos aqui para ajudar.',
       contactSupport: 'Contactar o suporte',
     },
+    exitIntent: {
+      title: 'Antes de sair!',
+      subtitle: 'Não perca esta oportunidade exclusiva',
+      offerBadge: '🎯 Oferta Exclusiva de Corretor',
+      offerTitle: 'Bónus Especial de Conta de Negociação',
+      offerDescription: 'Comece com nosso parceiro corretor mais bem avaliado e receba:',
+      benefits: {
+        welcomeBonus: 'Bónus de Boas-vindas $100',
+        zeroCommission: 'Negociação Sem Comissões',
+        freeSignals: 'Sinais de Negociação Gratuitos',
+        support247: 'Suporte ao Cliente 24/7',
+      },
+      claimButton: 'Resgatar Oferta Exclusiva',
+      dismissButton: 'Não obrigado, continuar navegando',
+      disclaimer: '*Aplicam-se termos e condições. Aviso de risco: A negociação envolve riscos.',
+    },
     footer: {
       description:
         'ChooseStockBroker.com é uma plataforma de comparação e serviço de informação independente que tem como objetivo fornecer as ferramentas de que você precisa para tomar decisões melhores. Embora sejamos independentes, as ofertas que aparecem neste site são de empresas das quais o ChooseStockBroker.com recebe compensação.',
@@ -1150,6 +1358,22 @@ export const TRANSLATIONS = {
       error: 'Terjadi kesalahan saat memuat Pertanyaan Umum. Silakan coba lagi nanti.',
       helpText: 'Masih punya pertanyaan? Kami siap membantu.',
       contactSupport: 'Hubungi Dukungan',
+    },
+    exitIntent: {
+      title: 'Sebelum Anda Pergi!',
+      subtitle: 'Jangan lewatkan kesempatan eksklusif ini',
+      offerBadge: '🎯 Penawaran Broker Eksklusif',
+      offerTitle: 'Bonus Akun Trading Khusus',
+      offerDescription: 'Mulai dengan mitra broker berperingkat teratas kami dan dapatkan:',
+      benefits: {
+        welcomeBonus: 'Bonus Selamat Datang $100',
+        zeroCommission: 'Trading Tanpa Komisi',
+        freeSignals: 'Sinyal Trading Gratis',
+        support247: 'Dukungan Pelanggan 24/7',
+      },
+      claimButton: 'Klaim Penawaran Eksklusif',
+      dismissButton: 'Tidak terima kasih, lanjut browsing',
+      disclaimer: '*Syarat dan ketentuan berlaku. Peringatan risiko: Trading melibatkan risiko.',
     },
     footer: {
       description:

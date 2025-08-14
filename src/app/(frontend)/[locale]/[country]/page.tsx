@@ -4,6 +4,7 @@ import { FAQ } from '@/Components/FAQ'
 import { Footer } from '@/Components/Footer'
 import { Header } from '@/Components/Header'
 import { Hero } from '@/Components/Hero'
+import { ExitIntentPopup } from '@/Components/ExitIntentPopup'
 import { getBrokers } from '@/actions/getBrokers'
 
 interface PageProps {
@@ -45,6 +46,7 @@ export default async function LocalizedPage({ params }: PageProps) {
         <FAQ locale={locale} country={country} />
       </main>
       <Footer locale={locale} country={country} />
+      <ExitIntentPopup locale={locale} />
     </>
   )
 }

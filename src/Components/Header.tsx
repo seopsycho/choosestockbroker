@@ -3,11 +3,8 @@
 import { useState } from 'react'
 import { CountrySelector } from './CountrySelector'
 import Link from 'next/link'
-import { getTranslations } from '../lib/language'
-
 export function Header({ locale, country }: { locale: string; country: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const t = getTranslations(locale)
 
   return (
     <header className="bg-white shadow-sm border-b">
@@ -15,18 +12,13 @@ export function Header({ locale, country }: { locale: string; country: string })
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-slate-800">1ChooseStockBroker</div>
+            <Link href={`/${locale}/${country}`} className="text-2xl font-bold text-slate-800 hover:text-blue-600 transition-colors">
+              1ChooseStockBroker
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href={`/${locale}/${country}`}
-              className="text-slate-700 hover:text-blue-600 transition-colors"
-            >
-              {t.navigation.home}
-            </Link>
-
             <CountrySelector locale={locale} country={country} />
           </div>
 
@@ -61,13 +53,6 @@ export function Header({ locale, country }: { locale: string; country: string })
         {isMenuOpen && (
           <div className="md:hidden mt-4 py-4 border-t">
             <div className="flex flex-col space-y-4">
-              <Link
-                href={`/${locale}/${country}`}
-                className="text-slate-700 hover:text-blue-600 transition-colors"
-              >
-                {t.navigation.home}
-              </Link>
-
               <div className="pt-2">
                 <CountrySelector locale={locale} country={country} />
               </div>

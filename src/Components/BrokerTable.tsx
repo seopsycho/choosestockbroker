@@ -175,10 +175,13 @@ export function BrokerTable({
                     </div>
                   </td>
                   <td className="py-6 px-6">
-                    <ul className="space-y-1 text-sm">
+                    <ul className="space-y-2 text-sm">
                       {broker.highlights.map((highlight, idx) => (
-                        <li key={idx} className="text-slate-600">
-                          • {highlight.highlight}
+                        <li key={idx} className="flex items-center gap-2">
+                          <span className="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full border border-green-200">
+                            ✓
+                          </span>
+                          <span className="text-slate-700">{highlight.highlight}</span>
                         </li>
                       ))}
                     </ul>
@@ -245,9 +248,14 @@ export function BrokerTable({
                 <h4 className="font-semibold text-slate-800 mb-2">
                   {t.brokers.tableHeaders.highlights}
                 </h4>
-                <ul className="space-y-1 text-sm text-slate-600">
+                <ul className="space-y-2 text-sm">
                   {broker.highlights.slice(0, 3).map((highlight, idx) => (
-                    <li key={idx}>• {highlight.highlight}</li>
+                    <li key={idx} className="flex items-center gap-2">
+                      <span className="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full border border-green-200">
+                        ✓
+                      </span>
+                      <span className="text-slate-600">{highlight.highlight}</span>
+                    </li>
                   ))}
                 </ul>
               </div>

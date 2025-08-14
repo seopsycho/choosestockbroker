@@ -3,14 +3,6 @@ import type { Metadata } from 'next'
 import { getTranslations, normalizeLocale, TRANSLATIONS } from '@/lib/language'
 import type { Translations } from '@/lib/language'
 
-interface LayoutProps {
-  children: ReactNode
-  params: {
-    locale: string
-    country: string
-  }
-}
-
 interface SiteSection {
   title: string
   description: string
@@ -18,8 +10,14 @@ interface SiteSection {
   metaDescription?: string
 }
 
-export default function LocalizedLayout({ children, params }: LayoutProps) {
-  const { locale, country } = params
+export default async function LocalizedLayout({
+  children,
+  params,
+}: {
+  children: ReactNode
+  params: Promise<{ locale: string; country: string }>
+}) {
+  const { locale, country } = await params
   return (
     <div data-locale={locale} data-country={country}>
       {children}
@@ -30,9 +28,9 @@ export default function LocalizedLayout({ children, params }: LayoutProps) {
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string; country: string }
+  params: Promise<{ locale: string; country: string }>
 }): Promise<Metadata> {
-  const { locale, country } = params
+  const { locale, country } = await params
   const lang = normalizeLocale(locale)
   const t: Translations = getTranslations(lang)
 

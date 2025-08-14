@@ -7,14 +7,14 @@ import { Hero } from '@/Components/Hero'
 import { getBrokers } from '@/actions/getBrokers'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     locale: string
     country: string
-  }
+  }>
 }
 
 export default async function LocalizedPage({ params }: PageProps) {
-  const { locale, country } = params
+  const { locale, country } = await params
   const data = await getBrokers()
   const brokers = Array.isArray(data?.docs)
     ? data.docs.map((broker: Partial<PayloadBroker>) => ({

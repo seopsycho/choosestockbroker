@@ -1,4 +1,7 @@
 import { ReactNode } from 'react'
+import type { Metadata } from 'next'
+import { getTranslations, normalizeLocale, TRANSLATIONS } from '@/lib/language'
+import type { Translations } from '@/lib/language'
 
 interface LayoutProps {
   children: ReactNode
@@ -8,9 +11,15 @@ interface LayoutProps {
   }
 }
 
+interface SiteSection {
+  title: string
+  description: string
+  tagline: string
+  metaDescription?: string
+}
+
 export default function LocalizedLayout({ children, params }: LayoutProps) {
   const { locale, country } = params
-
   return (
     <div data-locale={locale} data-country={country}>
       {children}
@@ -18,30 +27,40 @@ export default function LocalizedLayout({ children, params }: LayoutProps) {
   )
 }
 
-// Generate metadata based on locale and country
 export async function generateMetadata({
   params,
 }: {
   params: { locale: string; country: string }
-}) {
+}): Promise<Metadata> {
   const { locale, country } = params
+  const lang = normalizeLocale(locale)
+  const t: Translations = getTranslations(lang)
 
-  const titles: Record<string, string> = {
-    en: 'ChooseStockBroker - Compare Online Trading Brokers',
-    vi: 'ChooseStockBroker - So sánh các nhà môi giới giao dịch trực tuyến hàng đầu năm 2025',
-    de: 'ChooseStockBroker - Online Trading Broker Vergleichen',
-    fr: 'ChooseStockBroker - Comparer les Courtiers de Trading en Ligne',
-  }
+  // Build language alternates for SEO
+  const alternates: Record<string, string> = Object.keys(TRANSLATIONS).reduce(
+    (acc, code) => {
+      acc[code] = `/${code}/${country}`
+      return acc
+    },
+    {} as Record<string, string>,
+  )
 
-  const descriptions: Record<string, string> = {
-    en: 'Compare the best online trading brokers. Find regulated brokers with low fees, great platforms, and excellent customer service.',
-    vi: 'ChooseStockBroker so sánh các nhà môi giới giao dịch trực tuyến được quy định trên toàn cầu, nhấn mạnh phí thấp, nền tảng mạnh mẽ và dịch vụ vượt trội để bạn có thể giao dịch tài sản tài chính một cách tự tin vào năm 2025.',
-    de: 'Vergleichen Sie die besten Online-Trading-Broker. Finden Sie regulierte Broker mit niedrigen Gebühren und exzellentem Service.',
-    fr: 'Comparez les meilleurs courtiers de trading en ligne. Trouvez des courtiers régulés avec des frais bas et un excellent service.',
-  }
+  const site = t.site as unknown as SiteSection
+  const description: string = site.metaDescription || site.description
 
   return {
-    title: titles[locale] || titles.en,
-    description: descriptions[locale] || descriptions.en,
+    title: site.title,
+    description,
+    openGraph: {
+      title: site.title,
+      description,
+      locale: lang,
+      type: 'website',
+      url: `/${locale}/${country}`,
+      siteName: 'ChooseStockBroker',
+    },
+    alternates: {
+      languages: alternates,
+    },
   }
 }
